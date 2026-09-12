@@ -372,6 +372,60 @@
   </div>
 </section>
 
+<!-- ===================================================== 0.8 PÈNDOL -->
+<section class="view" id="t-pendol" data-topic="pendol" data-unit="0" data-num="0.8" data-title="Pràctica: el pèndol i la gravetat">
+  <div class="hero">
+    <div class="eyebrow">Unitat 0 <span class="sep">·</span> Pràctica de laboratori</div>
+    <h1>Un pes penjat d'un fil. <em>I en surt la gravetat.</em></h1>
+    <p class="lead">És la pràctica que fareu al laboratori. Amb un cordill, una bola i un cronòmetre es pot mesurar els 9,8 m/s² de la Terra.</p>
+  </div>
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">La idea</div><p>El <strong>període</strong> (T) és el temps d'una anada i tornada completa del pèndol. La sorpresa: no depèn de la massa de la bola ni (si l'angle és petit) de com l'has separat. Només depèn de la <strong>llargada del fil</strong>.</p></div>
+    <div class="prose">
+      <p>Això és el que heu de descobrir mesurant: proveu amb boles de pesos diferents i el període no canvia; proveu amb 5° i amb 10° i tampoc; allargueu el fil i el període creix.</p>
+      <h3>Com es mesura bé</h3>
+      <p>Cronometrar una sola oscil·lació és impossible: els teus reflexos valen 0,2 s i el període n'és 1 o 2. El truc: <strong>cronometra 10 oscil·lacions i divideix per 10</strong>. Així l'error dels teus dits es reparteix entre deu, i el període surt deu vegades més fi.</p>
+      <div class="formula">T = t<sub>10</sub> / 10<small>el temps de deu anades i tornades, dividit per deu</small></div>
+      <h3>La llei que en surt</h3>
+      <div class="formula">T = 2π · √(r / g)<small>r = llargada del fil · g = 9,8 m/s²</small></div>
+      <p>De la fórmula surt el truc de la pràctica. Si elevem els dos costats al quadrat: T² = (4π²/g)·r. Això vol dir que <strong>T² és proporcional a r</strong>: si dibuixes T² contra r, et surt una recta que passa pel zero. I del pendent d'aquesta recta en surt la gravetat:</p>
+      <div class="formula">g = 4π² / pendent<small>pendent = T² dividit per r</small></div>
+      <p>Per això a la taula de la pràctica calculeu K = T²/r per a cada llargada: si totes les K surten semblants, la llei es compleix, i 4π² dividit per aquesta K és la vostra g.</p>
+    </div>
+    <div class="interactive" data-interactive="pendol"></div>
+    <div class="prose">
+      <h3>Un exemple fet</h3>
+      <div class="steps">
+        <div class="step"><h4>Mesura</h4><p>Fil de 60 cm. Deu oscil·lacions: 15,5 s. Període: T = 15,5 / 10 = 1,55 s.</p></div>
+        <div class="step"><h4>Quocient</h4><p>K = T² / r = 1,55² / 0,60 = 2,40 / 0,60 = 4,00 s²/m.</p></div>
+        <div class="step"><h4>Gravetat</h4><p>g = 4π² / K = 39,48 / 4,00 = 9,87 m/s². El valor real és 9,81: un error del 0,6 %.</p></div>
+      </div>
+    </div>
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>Els rellotges de paret antics, els de pèndol, funcionen amb això: la llargada de la vareta fixa el ritme. Es regulen pujant o baixant el pes. I un gronxador és un pèndol: <em>els nens petits i els grans es gronxen al mateix ritme</em>, perquè la massa no compta.</p>
+    </div>
+  </div>
+  <div class="section warm">
+    <div class="eyebrow">Trampes</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Comptar mitja oscil·lació.</strong><p>Una oscil·lació és anar i tornar al mateix punt. Si comptes només l'anada, el període et surt la meitat.</p></div>
+      <div class="mistake"><strong>Separar-lo massa.</strong><p>Amb angles grans la fórmula deixa de valer. Per sota de 10° va bé.</p></div>
+      <div class="mistake"><strong>Mesurar el fil fins on comença la bola.</strong><p>La llargada r es mesura fins al <strong>centre</strong> de la bola.</p></div>
+      <div class="mistake"><strong>Passar els cm a metres al final.</strong><p>60 cm són 0,60 m. Si poses 60 a la fórmula, la g et sortirà cent vegades més petita.</p></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">Canvies la bola per una del doble de pes. El període...</div><div class="opts"><button>Es dobla</button><button>No canvia</button><button>Es fa la meitat</button></div><div class="why" hidden></div><div class="expl" hidden>A la fórmula T = 2π√(r/g) no hi ha la massa. Igual que en la caiguda lliure: el pes no compta.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Per què es cronometren 10 oscil·lacions i no una?</div><div class="opts"><button>Per reduir l'error dels reflexos</button><button>Perquè ho diu el llibre</button><button>Perquè el pèndol s'atura</button></div><div class="why" hidden></div><div class="expl" hidden>El teu error (uns 0,2 s) es divideix entre 10 i queda en 0,02 s.</div></div>
+      <div class="q" data-answer="2"><div class="qt">Si dibuixes T² contra r et surt...</div><div class="opts"><button>Una paràbola</button><button>Una corba qualsevol</button><button>Una recta que passa pel zero</button></div><div class="why" hidden></div><div class="expl" hidden>T² = (4π²/g)·r és una proporcionalitat directa: recta pel zero, i el pendent val 4π²/g.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Tens les dades de la pràctica?</strong> Enganxa-les al tutor i calculeu la g junts.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
 <!-- ===================================================== 1.1 MOVIMENT -->
 <section class="view" id="t-moviment" data-topic="moviment" data-unit="1" data-num="1.1" data-title="Moure's respecte de què">
   <div class="hero">
@@ -739,8 +793,112 @@
   </div>
 </section>
 
-<!-- ===================================================== E.1 DERIVADA -->
-<section class="view" id="t-derivada" data-topic="derivada" data-unit="E" data-num="E.1" data-title="Què és una derivada">
+<!-- ===================================================== E.1 POTÈNCIES -->
+<section class="view" id="t-potencies" data-topic="potencies" data-unit="E" data-num="E.1" data-title="Potències de 10 i calculadora">
+  <div class="hero">
+    <div class="eyebrow">Eines <span class="sep">·</span> Matemàtiques per a la física</div>
+    <h1>Nombres enormes i minúsculs. <em>Sense comptar zeros.</em></h1>
+    <p class="lead">La massa de la Terra té 25 xifres i la d'un electró té 30 zeros darrere la coma. Amb potències de 10 caben tots dos en una línia.</p>
+  </div>
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">La idea</div><p>10<sup>n</sup> és un 1 amb n zeros. 10<sup>-n</sup> és un 1 a la posició n després de la coma. Un nombre en <strong>notació científica</strong> és un nombre entre 1 i 10 multiplicat per una potència de 10.</p></div>
+    <div class="prose">
+      <p>5,97·10<sup>24</sup> kg és la massa de la Terra. 1,6·10<sup>-19</sup> C és la càrrega d'un electró. L'exponent diu quants llocs mous la coma: positiu cap a la dreta, negatiu cap a l'esquerra.</p>
+      <h3>Les quatre regles</h3>
+      <div class="spec">
+        <div><span>Multiplicar</span><span>Multipliques els números i <strong>sumes</strong> els exponents. (3·10<sup>4</sup>)·(2·10<sup>5</sup>) = 6·10<sup>9</sup>.</span></div>
+        <div><span>Dividir</span><span>Divideixes els números i <strong>restes</strong> els exponents. (6·10<sup>8</sup>)/(2·10<sup>3</sup>) = 3·10<sup>5</sup>.</span></div>
+        <div><span>Elevar</span><span>Eleves el número i <strong>multipliques</strong> l'exponent. (2·10<sup>3</sup>)² = 4·10<sup>6</sup>.</span></div>
+        <div><span>Sumar o restar</span><span>Només si tenen el <strong>mateix exponent</strong>. Si no, en canvies un: 3·10<sup>4</sup> + 2·10<sup>3</sup> = 3·10<sup>4</sup> + 0,2·10<sup>4</sup> = 3,2·10<sup>4</sup>.</span></div>
+      </div>
+      <p>Si el resultat no queda entre 1 i 10, l'ajustes: 45,2·10<sup>20</sup> = 4,52·10<sup>21</sup> (mous la coma un lloc a l'esquerra i puges l'exponent un).</p>
+      <h3>La calculadora</h3>
+      <p>Busca la tecla <span class="k">EXP</span>, <span class="k">EE</span> o <span class="k">×10ˣ</span>. Per escriure 5,97·10<sup>24</sup> es fa: 5,97, EXP, 24. <strong>No escriguis el "× 10" a mà</strong> si uses aquesta tecla, perquè el multiplicaries dues vegades. Per als exponents negatius, la tecla del canvi de signe és (−) o +/−, no la resta.</p>
+      <h3>Ordre de magnitud</h3>
+      <p>És només l'exponent: serveix per comparar de cop. Un bacteri és 10<sup>-6</sup> m i un àtom 10<sup>-10</sup> m: l'àtom és deu mil vegades més petit. Quan un problema et demana "una estimació", vol l'ordre de magnitud, no el nombre exacte.</p>
+    </div>
+    <div class="interactive" data-interactive="potencies"></div>
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>La memòria del mòbil: 128 GB són 1,28·10<sup>11</sup> bytes. La distància a la Lluna: 3,8·10<sup>8</sup> m. El gruix d'un cabell: 7·10<sup>-5</sup> m. <em>Tot cap en una línia</em> si comptes els zeros amb un exponent.</p>
+    </div>
+  </div>
+  <div class="section warm">
+    <div class="eyebrow">Trampes</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Sumar els exponents quan multipliques els números.</strong><p>(3·10<sup>4</sup>)·(2·10<sup>5</sup>): 3·2 = 6 i 4+5 = 9. Els números es multipliquen, els exponents se sumen.</p></div>
+      <div class="mistake"><strong>Sumar amb exponents diferents.</strong><p>3·10<sup>4</sup> + 2·10<sup>3</sup> no és 5·10<sup>7</sup>. Primer iguala els exponents.</p></div>
+      <div class="mistake"><strong>Deixar 45,2·10<sup>20</sup>.</strong><p>No és notació científica fins que el número queda entre 1 i 10: 4,52·10<sup>21</sup>.</p></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">(2·10<sup>6</sup>) · (4·10<sup>-3</sup>) = ?</div><div class="opts"><button>8·10<sup>-18</sup></button><button>8·10<sup>3</sup></button><button>6·10<sup>3</sup></button></div><div class="why" hidden></div><div class="expl" hidden>2·4 = 8 i 6 + (−3) = 3. Resultat: 8·10³, o sigui 8000.</div></div>
+      <div class="q" data-answer="0"><div class="qt">0,00047 en notació científica és...</div><div class="opts"><button>4,7·10<sup>-4</sup></button><button>4,7·10<sup>4</sup></button><button>47·10<sup>-5</sup></button></div><div class="why" hidden></div><div class="expl" hidden>Mous la coma 4 llocs cap a la dreta per arribar a 4,7, per tant l'exponent és −4. La tercera té 47, que no està entre 1 i 10.</div></div>
+      <div class="q" data-answer="2"><div class="qt">(3·10<sup>5</sup>)² = ?</div><div class="opts"><button>3·10<sup>10</sup></button><button>6·10<sup>10</sup></button><button>9·10<sup>10</sup></button></div><div class="why" hidden></div><div class="expl" hidden>El número s'eleva (3² = 9) i l'exponent es multiplica (5·2 = 10).</div></div>
+    </div>
+    <div class="askbar"><p><strong>Una operació que no et surt?</strong> Escriu-la al tutor tal com és al llibre.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== E.2 AÏLLAR -->
+<section class="view" id="t-aillar" data-topic="aillar" data-unit="E" data-num="E.2" data-title="Aïllar la incògnita">
+  <div class="hero">
+    <div class="eyebrow">Eines <span class="sep">·</span> Matemàtiques per a la física</div>
+    <h1>Treure la lletra que busques. <em>De qualsevol fórmula.</em></h1>
+    <p class="lead">La meitat dels errors d'un examen de física no són de física: són de despejar malament. Amb quatre regles ja no passa.</p>
+  </div>
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">La idea</div><p>Una equació és una <strong>balança</strong>. El que facis a un costat, fes-ho a l'altre, i seguirà equilibrada. Les regles de "passa restant" o "passa dividint" són només l'abreviatura d'això.</p></div>
+    <div class="prose">
+      <div class="spec">
+        <div><span>Suma / resta</span><span>El que <strong>suma</strong> a un costat, passa <strong>restant</strong> a l'altre. v = v<sub>0</sub> + a·t → v − v<sub>0</sub> = a·t.</span></div>
+        <div><span>Multiplica / divideix</span><span>El que <strong>multiplica</strong>, passa <strong>dividint</strong>. a·t = v − v<sub>0</sub> → t = (v − v<sub>0</sub>) / a.</span></div>
+        <div><span>Quadrat</span><span>El que està <strong>al quadrat</strong>, passa com a <strong>arrel</strong>. v² = 2·a·x → v = √(2·a·x).</span></div>
+        <div><span>Arrel</span><span>L'<strong>arrel</strong> passa com a <strong>quadrat</strong>. T = 2π√(r/g) → (T/2π)² = r/g.</span></div>
+      </div>
+      <p>Ordre: desfés primer el que està més lluny de la incògnita. Si la t està dins d'un parèntesi multiplicat per 3, primer treus el 3 i després obres el parèntesi.</p>
+      <h3>Quan la incògnita està al quadrat i també sola</h3>
+      <p>Passa sempre a la fórmula de la posició, x = x<sub>0</sub> + v<sub>0</sub>·t + ½·a·t², quan busques el temps: la t hi és dues vegades. Això és una <strong>equació de segon grau</strong>, i es resol amb la fórmula de sempre. Primer la deixes igualada a zero, a·t² + b·t + c = 0, i després:</p>
+      <div class="formula">t = ( −b ± √(b² − 4·a·c) ) / (2·a)<small>surten dues solucions: la del ± sumant i la del ± restant</small></div>
+      <p>Gairebé sempre una de les dues solucions és un temps negatiu. Es descarta: vol dir "abans de començar", i el problema comença a t = 0.</p>
+      <h3>Un exemple fet</h3>
+      <div class="steps">
+        <div class="step"><h4>El problema</h4><p>Llances una pilota cap amunt a 10 m/s des d'un balcó de 20 m. Quan arriba a terra?</p></div>
+        <div class="step"><h4>L'equació, igualada a zero</h4><p>Arribar a terra vol dir y = 0: 0 = 20 + 10·t − 4,9·t². Ho ordeno: 4,9·t² − 10·t − 20 = 0. Així a = 4,9, b = −10, c = −20.</p></div>
+        <div class="step"><h4>La fórmula</h4><p>t = (10 ± √(100 + 392)) / 9,8 = (10 ± 22,2) / 9,8. Surten t = 3,28 s i t = −1,24 s.</p></div>
+        <div class="step"><h4>Tria i comprova</h4><p>El temps negatiu es descarta. Triga <strong>3,28 s</strong>. Comprovació de sentit comú: si només la deixés caure trigaria 2,0 s, i com que primer puja, ha de trigar més. Quadra.</p></div>
+      </div>
+    </div>
+    <div class="interactive" data-interactive="aillar"></div>
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>És el mateix que fas quan calcules quant et queda de la paga: si has gastat 12 € i et queden 8, saps que en tenies 20 perquè has passat el 12 a l'altre costat. <em>Ho fas cada dia sense escriure-ho.</em></p>
+    </div>
+  </div>
+  <div class="section warm">
+    <div class="eyebrow">Trampes</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Passar un terme que està sumat com si multipliqués.</strong><p>De v = v₀ + a·t, la v₀ passa restant, no dividint.</p></div>
+      <div class="mistake"><strong>Arrel de tot el que hi ha.</strong><p>√(a² + b²) no és a + b. L'arrel s'aplica a tota la suma junta.</p></div>
+      <div class="mistake"><strong>Quedar-te amb les dues solucions del segon grau.</strong><p>Mira quina té sentit físic: un temps negatiu o una massa negativa es descarten.</p></div>
+      <div class="mistake"><strong>Substituir abans d'aïllar.</strong><p>Va millor aïllar primer amb lletres i posar els números al final: hi ha menys errors i es veu si la fórmula quadra.</p></div>
+    </div>
+  </div>
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">De v = v₀ + a·t, quant val t?</div><div class="opts"><button>t = v − v₀ − a</button><button>t = (v − v₀) / a</button><button>t = v / (v₀ + a)</button></div><div class="why" hidden></div><div class="expl" hidden>Primer la v₀ passa restant, i després la a, que multiplica, passa dividint tot el bloc.</div></div>
+      <div class="q" data-answer="2"><div class="qt">De v² = 2·a·x, quant val x?</div><div class="opts"><button>x = v / (2a)</button><button>x = √(2av)</button><button>x = v² / (2a)</button></div><div class="why" hidden></div><div class="expl" hidden>El 2a multiplica, per tant passa dividint. El quadrat de la v es queda on és: no el toques.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Resols una equació de segon grau i et surten t = 4 s i t = −2 s. Quina agafes?</div><div class="opts"><button>4 s</button><button>−2 s</button><button>Les dues</button></div><div class="why" hidden></div><div class="expl" hidden>El temps negatiu seria abans de començar el problema. Es descarta.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Una fórmula que no saps girar?</strong> Escriu-la al tutor i digues quina lletra busques.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== E.3 DERIVADA -->
+<section class="view" id="t-derivada" data-topic="derivada" data-unit="E" data-num="E.3" data-title="Què és una derivada">
   <div class="hero">
     <div class="eyebrow">Eines <span class="sep">·</span> Matemàtiques per a la física</div>
     <h1>Derivar és mirar el pendent. <em>En un punt.</em></h1>
@@ -780,8 +938,8 @@
   </div>
 </section>
 
-<!-- ===================================================== E.2 TRIGO -->
-<section class="view" id="t-trigo" data-topic="trigo" data-unit="E" data-num="E.2" data-title="Sinus i cosinus per als vectors">
+<!-- ===================================================== E.4 TRIGO -->
+<section class="view" id="t-trigo" data-topic="trigo" data-unit="E" data-num="E.4" data-title="Sinus i cosinus per als vectors">
   <div class="hero">
     <div class="eyebrow">Eines <span class="sep">·</span> Matemàtiques per a la física</div>
     <h1>Sinus, cosinus, tangent. <em>Les tres que fan falta.</em></h1>
@@ -810,6 +968,51 @@
       <div class="q" data-answer="1"><div class="qt">Quina funció va amb l'eix X?</div><div class="opts"><button>El sinus</button><button>El cosinus</button><button>La tangent</button></div><div class="why" hidden></div><div class="expl" hidden>Cosinus, "costat". El sinus va amb l'eix Y.</div></div>
     </div>
     <div class="askbar"><p><strong>Un angle que no quadra?</strong> Dona les components al tutor.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== E.5 PROBLEMES -->
+<section class="view" id="t-problemes" data-topic="problemes" data-unit="E" data-num="E.5" data-title="Com atacar un problema">
+  <div class="hero">
+    <div class="eyebrow">Eines <span class="sep">·</span> Mètode</div>
+    <h1>Sis passos, sempre els mateixos. <em>Fins i tot quan no saps què fer.</em></h1>
+    <p class="lead">Un problema de física no es mira fixament fins que surt. Es desmunta. Aquests sis passos serveixen per a tots els de cinemàtica.</p>
+  </div>
+  <div class="section">
+    <div class="steps">
+      <div class="step"><h4>Llegeix-lo dues vegades i fes un dibuix</h4><p>Un ninot, una recta, una fletxa. El dibuix no és per fer bonic: és on veuràs si el cotxe va cap a la dreta o cap a l'esquerra.</p></div>
+      <div class="step"><h4>Posa l'origen i decideix cap a on és positiu</h4><p>Ho tries tu. El més còmode: l'origen on comença el moviment, i positiu cap on es mou. En caigudes, positiu cap amunt i l'origen a terra.</p></div>
+      <div class="step"><h4>Apunta les dades amb signe i en unitats del SI</h4><p>Una llista curta: v₀ = +20 m/s, a = −4 m/s², x₀ = 0. Els km/h a m/s ara, no després. Si una dada no la donen però la saps (parteix del repòs vol dir v₀ = 0; "arriba a terra" vol dir y = 0), apunta-la també.</p></div>
+      <div class="step"><h4>Escriu què et demanen, amb la seva lletra</h4><p>"Quant triga" és t. "Fins on arriba" és x o y. "A quina velocitat" és v. Sense això no pots triar la fórmula.</p></div>
+      <div class="step"><h4>Tria la fórmula que conté el que busques i només dades que tens</h4><p>Si hi ha una lletra que ni tens ni busques, no és aquesta fórmula. L'interactiu de sota ho fa per tu fins que et surti sol.</p></div>
+      <div class="step"><h4>Substitueix, calcula i comprova</h4><p>Tres comprovacions de deu segons: les unitats són les que toca? El signe té sentit? El número és raonable (un cotxe no frena en 3 km ni una pedra cau a 500 m/s des d'una taula)?</p></div>
+    </div>
+    <div class="interactive" data-interactive="quinaformula"></div>
+    <div class="prose">
+      <h3>Un exemple sencer, amb els sis passos</h3>
+      <div class="intro-box" style="margin:8px 0 18px"><div class="eyebrow">Enunciat</div><p>Un cotxe circula a 72 km/h i frena amb una acceleració de 4 m/s². Quina distància recorre fins que s'atura?</p></div>
+      <div class="steps">
+        <div class="step"><h4>Dibuix</h4><p>Una recta, el cotxe cap a la dreta, una fletxa de frenada cap a l'esquerra.</p></div>
+        <div class="step"><h4>Origen i signe</h4><p>Origen on comença a frenar (x₀ = 0), positiu cap a la dreta (cap on va).</p></div>
+        <div class="step"><h4>Dades</h4><p>v₀ = 72/3,6 = +20 m/s. a = −4 m/s² (frena, sentit contrari a la velocitat). "Fins que s'atura" vol dir v = 0.</p></div>
+        <div class="step"><h4>Incògnita</h4><p>La distància: Δx.</p></div>
+        <div class="step"><h4>Fórmula</h4><p>Tinc v, v₀ i a; busco Δx; no sé el temps ni me'l demanen. La que no té t: v² = v₀² + 2·a·Δx.</p></div>
+        <div class="step"><h4>Càlcul i comprovació</h4><p>0 = 400 + 2·(−4)·Δx → Δx = 400/8 = <strong>50 m</strong>. Unitats: metres, bé. Signe: positiu, avança mentre frena, bé. Número: mig camp de futbol a 72 km/h, raonable.</p></div>
+      </div>
+    </div>
+    <div class="life">
+      <div class="eyebrow dark">Consell d'examen</div>
+      <p>Si et quedes en blanc, comença igualment pels passos 1, 2 i 3. Moltes vegades, amb les dades apuntades amb signe davant, <em>la fórmula apareix sola</em>. I un problema començat val més punts que un full en blanc.</p>
+    </div>
+  </div>
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">"Parteix del repòs" vol dir...</div><div class="opts"><button>a = 0</button><button>v₀ = 0</button><button>x₀ = 0</button></div><div class="why" hidden></div><div class="expl" hidden>Repòs vol dir aturat al principi: la velocitat inicial és zero. L'acceleració pot ser el que sigui.</div></div>
+      <div class="q" data-answer="2"><div class="qt">Un problema et dona v₀, a i t i demana la posició. Quina fórmula?</div><div class="opts"><button>v = v₀ + a·t</button><button>v² = v₀² + 2aΔx</button><button>x = x₀ + v₀·t + ½·a·t²</button></div><div class="why" hidden></div><div class="expl" hidden>És l'única que conté la x i que només necessita dades que tens.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Et surt que un cotxe frena en 800 m des de 50 km/h. Què fas?</div><div class="opts"><button>Revisar: el número no és raonable</button><button>Deixar-ho, la fórmula és la fórmula</button><button>Canviar el signe</button></div><div class="why" hidden></div><div class="expl" hidden>A 50 km/h un cotxe frena en uns 15 m. Un resultat absurd sol voler dir unitats mal posades (km/h en lloc de m/s).</div></div>
+    </div>
+    <div class="askbar"><p><strong>Enganxa-li un problema sencer al tutor.</strong> Et farà fer els sis passos, un a un.</p><button class="iconbtn ask">Pregunta-ho</button></div>
   </div>
 </section>
 

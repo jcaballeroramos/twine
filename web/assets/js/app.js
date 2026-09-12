@@ -92,6 +92,10 @@
   /* ---------- tutor (xat) ---------- */
   const CHIPS = {
     inici: ['Per on començo si no entenc els vectors?', 'Què és el més important de la unitat 0?', 'Com et faig preguntes d\'un exercici del llibre?'],
+    pendol: ['Per què es compten 10 oscil·lacions?', 'D\'on surt g = 4π²/K?', 'Tinc les meves dades de la pràctica, m\'ajudes?'],
+    potencies: ['Com es multipliquen dues potències de 10?', 'Com escric 0,000036 en notació científica?', 'Com es fa amb la tecla EXP de la calculadora?'],
+    aillar: ['Com trec la t de x = x₀ + v₀t + ½at²?', 'Explica\'m l\'equació de segon grau amb un exemple', 'Per què una solució es descarta?'],
+    problemes: ['Tinc aquest problema i no sé per on començar', 'Com sé quina fórmula he de fer servir?', 'Què vol dir "parteix del repòs"?'],
     magnituds: ['Per què l\'alegria no és una magnitud?', 'Diferència entre mesura directa i indirecta amb un exemple', 'Es poden sumar metres i segons?'],
     si: ['Explica\'m els factors de conversió amb 90 km/h', 'Per què 1 m² són 10 000 cm²?', 'Com escric 0,000036 en notació científica?'],
     dimensional: ['Equació dimensional de la pressió pas a pas', 'Per què el ½ no compta?', 'Com sé si una fórmula és homogènia?'],

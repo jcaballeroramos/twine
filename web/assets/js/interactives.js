@@ -729,3 +729,203 @@
     upd();
   };
 })();
+
+/* ============================================================
+   Eines noves + pràctica del pèndol
+   ============================================================ */
+(function () {
+  'use strict';
+  const I = window.INTERACTIVES;
+  const { fmt, el, svg, clear, shell, slider, readout, graph, text } = I._u;
+
+  /* ===================================================== 0.8 pèndol */
+  I.pendol = function (c) {
+    const { canvas, panel } = shell(c, { title: 'El pèndol al laboratori', hint: 'Canvia la llargada, la massa i l\'angle. Mira què fa canviar el període i què no.' });
+    const g = 9.81;
+    let r = 0.60, massa = 50, ang = 10, t0 = performance.now();
+    const wrap = el('div', { style: 'display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap' }); canvas.appendChild(wrap);
+    const W = 190, H = 260;
+    const s = svg('svg', { viewBox: `0 0 ${W} ${H}`, style: 'flex:0 0 180px;width:180px' }); wrap.appendChild(s);
+    const right = el('div', { style: 'flex:1;min-width:230px' }); wrap.appendChild(right);
+    s.appendChild(svg('rect', { x: 40, y: 18, width: 110, height: 6, style: 'fill:var(--stone-300)' }));
+    const swing = svg('g'); s.appendChild(swing);
+    const ruler = svg('g'); s.appendChild(ruler);
+    const gT = graph(right, { w: 330, h: 190, xmin: 0, xmax: 1.3, ymin: 0, ymax: 6, xticks: 4, yticks: 3, xlabel: 'r (m)', ylabel: 'T² (s²)', xd: 1 });
+    const line = gT.path([], 'svg-curve red');
+    const pts = svg('g'); gT.layer.appendChild(pts);
+    slider(panel, 'Llargada del fil r', 0.1, 1.2, 0.05, r, v => { r = v; upd(); }, v => fmt(v * 100, 0) + ' cm');
+    slider(panel, 'Massa de la bola', 10, 200, 10, massa, v => { massa = v; upd(); }, v => v + ' g');
+    slider(panel, 'Angle inicial', 5, 30, 1, ang, v => { ang = v; upd(); }, v => v + '°');
+    const R = readout(panel, [
+      { key: 'T', label: 'Període T = 2π√(r/g)', big: true },
+      { key: 't10', label: 'El que marcaria el cronòmetre (10 oscil·lacions)' },
+      { key: 'K', label: 'Quocient K = T² / r' },
+      { key: 'g', label: 'Gravetat: g = 4π² / K', big: true }
+    ]);
+    function T() { return 2 * Math.PI * Math.sqrt(r / g); }
+    function upd() {
+      const per = T(), K = per * per / r;
+      R.set('T', fmt(per, 2) + ' s'); R.set('t10', fmt(per * 10, 1) + ' s');
+      R.set('K', `${fmt(per * per, 2)} / ${fmt(r, 2)} = ${fmt(K, 2)} s²/m`);
+      R.set('g', `39,48 / ${fmt(K, 2)} = ${fmt(4 * Math.PI * Math.PI / K, 2)} m/s²`);
+      const th = ang * Math.PI / 180, corr = th * th / 16;
+      R.note(ang > 12
+        ? `Angle gran: la fórmula T = 2π√(r/g) només val per a angles petits. A ${ang}° el període real seria un ${fmt(corr * 100, 1)} % més llarg (${fmt(per * (1 + corr), 2)} s). Per això a la pràctica es fa servir 5° o 10°.`
+        : (massa !== 50 || ang !== 10
+          ? 'Fixa-t\'hi: has canviat la massa o l\'angle i el període no s\'ha mogut ni una centèsima. Només la llargada el canvia.'
+          : 'Mou la llargada i mira com canvia el període. Després prova de moure la massa i l\'angle: no passa res.'));
+      clear(pts);
+      const P = []; for (let x = 0; x <= 1.3; x += 0.05) P.push([x, 4 * Math.PI * Math.PI / g * x]);
+      line.setAttribute('d', P.map((p, i) => (i ? 'L' : 'M') + gT.X(p[0]).toFixed(1) + ' ' + gT.Y(Math.min(6, p[1])).toFixed(1)).join(' '));
+      [0.3, 0.6, 0.9].forEach(x => { const y = 4 * Math.PI * Math.PI / g * x; if (y <= 6) pts.appendChild(svg('circle', { cx: gT.X(x), cy: gT.Y(y), r: 4, style: 'fill:var(--stone-400)' })); });
+      const yc = Math.min(6, per * per); pts.appendChild(svg('circle', { cx: gT.X(r), cy: gT.Y(yc), r: 6, class: 'svg-handle' }));
+    }
+    function draw(now) {
+      const th = ang * Math.PI / 180 * Math.cos(2 * Math.PI * (now - t0) / 1000 / T());
+      const px = 95, py = 24, L = 40 + r * 140;
+      const bx = px + L * Math.sin(th), by = py + L * Math.cos(th);
+      clear(swing); clear(ruler);
+      swing.appendChild(svg('line', { x1: px, y1: py, x2: px, y2: py + L, style: 'stroke:var(--stone-300);stroke-width:1;stroke-dasharray:3 3' }));
+      swing.appendChild(svg('line', { x1: px, y1: py, x2: bx, y2: by, style: 'stroke:var(--ink);stroke-width:1.5' }));
+      swing.appendChild(svg('circle', { cx: bx, cy: by, r: 5 + massa / 28, style: 'fill:var(--accent)' }));
+      ruler.appendChild(svg('line', { x1: 26, y1: py, x2: 26, y2: py + L, style: 'stroke:var(--stone-500);stroke-width:1' }));
+      ruler.appendChild(svg('line', { x1: 22, y1: py, x2: 30, y2: py, style: 'stroke:var(--stone-500);stroke-width:1' }));
+      ruler.appendChild(svg('line', { x1: 22, y1: py + L, x2: 30, y2: py + L, style: 'stroke:var(--stone-500);stroke-width:1' }));
+      const lab = text(20, py + L / 2, 'r', 'svg-mono muted', 'end'); ruler.appendChild(lab);
+      requestAnimationFrame(draw);
+    }
+    upd(); requestAnimationFrame(draw);
+  };
+
+  /* ===================================================== E.1 potències */
+  I.potencies = function (c) {
+    const { canvas, panel } = shell(c, { title: 'Operar amb potències de 10', hint: 'Tria dos nombres i una operació. Mira la regla que s\'aplica.' });
+    let a = 3, n = 6, b = 4, m = -3, op = '×';
+    const chain = el('div', { class: 'chain', style: 'font-size:15px;line-height:2.1' }); canvas.appendChild(chain);
+    const row1 = el('div', { class: 'row' }, [el('div', {}, [el('label', { text: 'Primer nombre' }), el('input', { type: 'number', value: a, step: 'any' })]), el('div', {}, [el('label', { text: 'Exponent' }), el('input', { type: 'number', value: n })])]);
+    const opSel = el('select'); ['×', '÷', '+'].forEach(o => opSel.appendChild(el('option', { value: o, text: o === '×' ? 'multiplicar ×' : o === '÷' ? 'dividir ÷' : 'sumar +' })));
+    const row2 = el('div', { class: 'row' }, [el('div', {}, [el('label', { text: 'Segon nombre' }), el('input', { type: 'number', value: b, step: 'any' })]), el('div', {}, [el('label', { text: 'Exponent' }), el('input', { type: 'number', value: m })])]);
+    panel.appendChild(row1); panel.appendChild(el('label', { text: 'Operació' })); panel.appendChild(opSel); panel.appendChild(row2);
+    const ins = row1.querySelectorAll('input'), ins2 = row2.querySelectorAll('input');
+    const R = readout(panel, [{ key: 'reg', label: 'Regla' }, { key: 'res', label: 'Resultat', big: true }, { key: 'dec', label: 'Escrit sencer' }]);
+    function sciHTML(x, e) { return `${fmt(x, 2).replace(/,00$/, '')}·10<sup>${e}</sup>`; }
+    function norm(x, e) { if (x === 0) return [0, 0]; while (Math.abs(x) >= 10) { x /= 10; e++; } while (Math.abs(x) < 1) { x *= 10; e--; } return [x, e]; }
+    function upd() {
+      a = +ins[0].value || 0; n = Math.round(+ins[1].value || 0); b = +ins2[0].value || 0; m = Math.round(+ins2[1].value || 0); op = opSel.value;
+      let html = `${sciHTML(a, n)} &nbsp;${op}&nbsp; ${sciHTML(b, m)}`, x, e, regla;
+      if (op === '×') { x = a * b; e = n + m; regla = 'Multiplica els nombres i SUMA els exponents.'; html += `<br>= (${fmt(a, 2).replace(/,00$/, '')} · ${fmt(b, 2).replace(/,00$/, '')}) · 10<sup>${n} + ${m}</sup> = ${sciHTML(x, e)}`; }
+      else if (op === '÷') { x = b !== 0 ? a / b : NaN; e = n - m; regla = 'Divideix els nombres i RESTA els exponents.'; html += `<br>= (${fmt(a, 2).replace(/,00$/, '')} / ${fmt(b, 2).replace(/,00$/, '')}) · 10<sup>${n} − ${m}</sup> = ${sciHTML(x, e)}`; }
+      else { const E = Math.max(n, m); const aa = a * Math.pow(10, n - E), bb = b * Math.pow(10, m - E); x = aa + bb; e = E; regla = 'Per sumar, primer el MATEIX exponent. Després se sumen només els nombres.'; html += `<br>= ${sciHTML(aa, E)} + ${sciHTML(bb, E)} = ${sciHTML(x, e)}`; }
+      const [xn, en] = norm(x, e);
+      if (Math.abs(x) >= 10 || (Math.abs(x) < 1 && x !== 0)) html += `<br>= <span class="keep">${sciHTML(xn, en)}</span> <span style="color:var(--stone-500)">(ajustat: el nombre ha de quedar entre 1 i 10)</span>`;
+      else html += ` <span class="keep">✓</span>`;
+      chain.innerHTML = html;
+      R.set('reg', regla); R.set('res', sciHTML(xn, en));
+      const val = xn * Math.pow(10, en);
+      R.set('dec', Math.abs(en) > 8 ? 'massa llarg per escriure\'l' : val.toLocaleString('ca-ES', { maximumFractionDigits: 10 }));
+      R.note(op === '+' ? 'Amb sumes i restes els exponents NO es toquen: només es fa que siguin iguals.' : 'Els nombres de davant es multipliquen o divideixen; els exponents se sumen o es resten. Mai al revés.');
+    }
+    [...ins, ...ins2, opSel].forEach(x => x.addEventListener('input', upd));
+    upd();
+  };
+
+  /* ===================================================== E.2 aïllar */
+  I.aillar = function (c) {
+    const { canvas, panel } = shell(c, { title: 'Aïllar una lletra', hint: 'Tria una fórmula i quina lletra busques. Es desmunta pas a pas.' });
+    const F = {
+      'v = v₀ + a·t': {
+        'v₀': ['Vull v₀ i està sumada a l\'altre costat.', 'La a·t multiplica: passa restant.', 'v₀ = v − a·t'],
+        'a': ['Primer trec la v₀, que suma: v − v₀ = a·t', 'Ara la t multiplica la a: passa dividint.', 'a = (v − v₀) / t'],
+        't': ['Primer trec la v₀, que suma: v − v₀ = a·t', 'Ara la a multiplica la t: passa dividint.', 't = (v − v₀) / a']
+      },
+      'x = x₀ + v·t': {
+        'v': ['Trec la x₀, que suma: x − x₀ = v·t', 'La t multiplica: passa dividint.', 'v = (x − x₀) / t'],
+        't': ['Trec la x₀, que suma: x − x₀ = v·t', 'La v multiplica: passa dividint.', 't = (x − x₀) / v'],
+        'x₀': ['La x₀ està sola sumant.', 'El v·t passa restant.', 'x₀ = x − v·t']
+      },
+      'v² = v₀² + 2·a·Δx': {
+        'v': ['La v està al quadrat.', 'Passa a l\'altre costat com a arrel de TOT el que hi ha.', 'v = √(v₀² + 2·a·Δx)'],
+        'a': ['Trec la v₀², que suma: v² − v₀² = 2·a·Δx', 'El 2·Δx multiplica: passa dividint.', 'a = (v² − v₀²) / (2·Δx)'],
+        'Δx': ['Trec la v₀², que suma: v² − v₀² = 2·a·Δx', 'El 2·a multiplica: passa dividint.', 'Δx = (v² − v₀²) / (2·a)']
+      },
+      'T = 2π·√(r/g)': {
+        'r': ['El 2π multiplica: passa dividint. T/(2π) = √(r/g)', 'L\'arrel passa com a quadrat: (T/2π)² = r/g', 'La g divideix: passa multiplicant.', 'r = g·(T / 2π)²'],
+        'g': ['El 2π multiplica: passa dividint. T/(2π) = √(r/g)', 'L\'arrel passa com a quadrat: (T/2π)² = r/g', 'Ara la g està a sota: es creuen.', 'g = r / (T / 2π)²  =  4π²·r / T²']
+      },
+      'ρ = m / V': {
+        'm': ['La V està dividint.', 'Passa multiplicant a l\'altre costat.', 'm = ρ · V'],
+        'V': ['La V està dividint: primer la pujo. ρ·V = m', 'Ara la ρ multiplica: passa dividint.', 'V = m / ρ']
+      },
+      'e_r = (e_a / m̄)·100': {
+        'e_a': ['El 100 multiplica: passa dividint. e_r/100 = e_a/m̄', 'La m̄ divideix: passa multiplicant.', 'e_a = (e_r / 100) · m̄']
+      }
+    };
+    const fSel = el('select'); Object.keys(F).forEach(k => fSel.appendChild(el('option', { value: k, text: k })));
+    const uSel = el('select');
+    panel.appendChild(el('label', { text: 'Fórmula' })); panel.appendChild(fSel);
+    panel.appendChild(el('label', { text: 'Quina lletra busques' })); panel.appendChild(uSel);
+    const box = el('div', { class: 'chain', style: 'font-size:15px' }); canvas.appendChild(box);
+    function fillU() { clear(uSel); Object.keys(F[fSel.value]).forEach(k => uSel.appendChild(el('option', { value: k, text: k }))); }
+    function upd() {
+      const steps = F[fSel.value][uSel.value] || [];
+      box.innerHTML = `<div style="color:var(--stone-500);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px">Partim de &nbsp;·&nbsp; ${fSel.value}</div>` +
+        steps.map((t, i) => i === steps.length - 1
+          ? `<div style="margin-top:12px;font-size:18px" class="keep">${t}</div>`
+          : `<div style="margin:6px 0"><span style="color:var(--stone-400)">${i + 1}.</span> ${t}</div>`).join('');
+    }
+    fSel.addEventListener('change', () => { fillU(); upd(); });
+    uSel.addEventListener('change', upd);
+    fillU(); upd();
+  };
+
+  /* ===================================================== E.5 quina fórmula */
+  I.quinaformula = function (c) {
+    const { canvas, panel } = shell(c, { title: 'Quina fórmula faig servir?', hint: 'Marca el que et donen i tria el que et demanen.', stack: true });
+    const VARS = [
+      { k: 'v0', n: 'velocitat inicial v₀' },
+      { k: 'v', n: 'velocitat final v' },
+      { k: 'a', n: 'acceleració a' },
+      { k: 't', n: 'temps t' },
+      { k: 'dx', n: 'desplaçament Δx' }
+    ];
+    const EQ = [
+      { f: 'x = x₀ + v·t', v: ['dx', 'v', 't'], nota: 'MRU: velocitat constant (a = 0).' },
+      { f: 'v = v₀ + a·t', v: ['v', 'v0', 'a', 't'], nota: 'La que relaciona velocitats i temps.' },
+      { f: 'x = x₀ + v₀·t + ½·a·t²', v: ['dx', 'v0', 'a', 't'], nota: 'La de la posició. Si busques la t i no la tens, surt una equació de segon grau.' },
+      { f: 'v² = v₀² + 2·a·Δx', v: ['v', 'v0', 'a', 'dx'], nota: 'La que no porta el temps.' }
+    ];
+    const known = new Set(['v0', 'a', 't']);
+    let want = 'dx';
+    const boxes = el('div', { style: 'display:flex;flex-wrap:wrap;gap:10px 18px;margin-bottom:4px' });
+    VARS.forEach(v => {
+      const lab = el('label', { style: 'font-family:var(--sans);font-size:14.5px;letter-spacing:0;text-transform:none;color:var(--stone-800);font-weight:400;margin:0;display:flex;gap:7px;align-items:center' });
+      const inp = el('input', { type: 'checkbox', style: 'width:auto' }); if (known.has(v.k)) inp.checked = true;
+      inp.addEventListener('change', () => { inp.checked ? known.add(v.k) : known.delete(v.k); upd(); });
+      lab.appendChild(inp); lab.appendChild(document.createTextNode(v.n)); boxes.appendChild(lab);
+    });
+    panel.appendChild(el('label', { text: 'Què et donen' })); panel.appendChild(boxes);
+    const wSel = el('select'); VARS.forEach(v => wSel.appendChild(el('option', { value: v.k, text: v.n })));
+    wSel.value = want; wSel.addEventListener('change', () => { want = wSel.value; upd(); });
+    panel.appendChild(el('label', { text: 'Què et demanen' })); panel.appendChild(wSel);
+    const out = el('div'); canvas.appendChild(out);
+    function upd() {
+      known.delete(want);
+      clear(out);
+      const ok = EQ.filter(e => e.v.includes(want) && e.v.every(x => x === want || known.has(x)));
+      if (ok.length) {
+        out.appendChild(el('div', { class: 'eyebrow', html: 'Fes servir', style: 'margin-bottom:12px' }));
+        ok.forEach(e => {
+          out.appendChild(el('div', { class: 'formula', html: `${e.f}<small>${e.nota}</small>`, style: 'display:block;margin-bottom:10px' }));
+        });
+        out.appendChild(el('p', { style: 'color:var(--stone-600);font-size:14.5px', html: 'Aïlla-hi <strong>' + (VARS.find(v => v.k === want) || {}).n + '</strong> i substitueix. Recorda els signes: el que va en sentit contrari al positiu, negatiu.' }));
+      } else {
+        const falten = EQ.map(e => ({ e, f: e.v.filter(x => x !== want && !known.has(x)) })).filter(o => o.e.v.includes(want)).sort((p, q) => p.f.length - q.f.length)[0];
+        out.appendChild(el('div', { class: 'eyebrow', html: 'Encara no es pot', style: 'margin-bottom:12px' }));
+        out.appendChild(el('p', { style: 'color:var(--stone-700);font-size:15px;max-width:60ch', html: falten
+          ? `Amb aquestes dades no n'hi ha prou. La més a prop és <span class="k">${falten.e.f}</span>, i et falta: <strong>${falten.f.map(k => (VARS.find(v => v.k === k) || {}).n).join(', ')}</strong>.<br><br>Sovint la dada que falta és a l'enunciat amb paraules: "parteix del repòs" és v₀ = 0, "s'atura" és v = 0, "cau lliurement" és a = 9,8 m/s². Si no hi és, es treu en dos passos: primer una altra fórmula per trobar-la, i després aquesta.`
+          : 'Tria alguna dada més.' }));
+      }
+    }
+    upd();
+  };
+})();
