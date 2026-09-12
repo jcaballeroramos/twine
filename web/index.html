@@ -1,0 +1,1015 @@
+<!doctype html>
+<html lang="ca">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Física 1r Batx · Entendre-ho</title>
+<meta name="description" content="Web d'estudi de Física de 1r de Batxillerat: magnituds, vectors, mesura i cinemàtica explicades amb exemples quotidians, interactius i un tutor per xat.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,200;0,300;0,400;0,500;0,600;0,800;1,300&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <button class="iconbtn menubtn" id="menuBtn" aria-label="Obre el menú">Temes</button>
+  <a class="brand" href="#inici"><span class="box">FÍS</span><span class="box outline">1r BATX</span><span class="plain">Entendre-ho</span></a>
+  <span class="spacer"></span>
+  <span class="meta" id="topbarMeta">Unitats 0 · 1</span>
+  <button class="iconbtn primary" id="askBtn">Pregunta-ho</button>
+</header>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Temes"></nav>
+
+  <main class="main" id="main">
+
+<!-- ===================================================== INICI -->
+<section class="view" id="t-inici" data-topic="inici" data-title="Inici">
+  <div class="hero">
+    <div class="eyebrow">Física <span class="sep">·</span> 1r de Batxillerat <span class="sep">·</span> Unitats 0 i 1</div>
+    <h1>Física que s'entén. <em>Sense memoritzar.</em></h1>
+    <p class="lead">Aquesta web va a poc a poc pels conceptes que el llibre dona per fets: què és una magnitud, què és un vector, què vol dir "derivar", per què el desplaçament pot ser zero després de caminar tot el dia. Cada tema té una explicació curta, un exemple de la vida de cada dia, un interactiu per tocar-ho amb les mans i un tutor a qui preguntar el que no quedi clar.</p>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Com fer-la servir</div>
+    <div class="steps">
+      <div class="step"><h4>Llegeix la idea en una frase</h4><p>Cada tema comença amb la idea nua, sense fórmula. Si aquesta frase s'entén, la resta és notació.</p></div>
+      <div class="step"><h4>Toca l'interactiu</h4><p>Arrossega el vector, mou el temps, canvia l'acceleració. Les fórmules són descripcions del que veus moure's.</p></div>
+      <div class="step"><h4>Mira els errors típics</h4><p>Són les trampes en què cau tothom a l'examen. Val més trobar-les aquí.</p></div>
+      <div class="step"><h4>Comprova-ho i pregunta</h4><p>Tres preguntes ràpides al final de cada tema. I el botó "Pregunta-ho" obre un tutor que ja sap en quin tema ets. Pots preguntar-li qualsevol cosa, en català o en castellà, també un exercici del llibre.</p></div>
+    </div>
+  </div>
+
+  <div class="home-map" id="homeMap"></div>
+
+  <div class="section dark">
+    <div class="eyebrow dark">Idea de fons</div>
+    <p class="quote">Una fórmula és una frase escrita en curt. <em>Si saps llegir-la, no cal memoritzar-la.</em></p>
+    <div class="prose"><p style="color:var(--stone-300)">v = Δx / Δt vol dir "la velocitat és el que has avançat dividit pel temps que has trigat". Quan una fórmula es pot dir en veu alta amb paraules normals, ja no s'oblida.</p></div>
+  </div>
+</section>
+
+<!-- ===================================================== 0.1 MAGNITUDS -->
+<section class="view" id="t-magnituds" data-topic="magnituds" data-unit="0" data-num="0.1" data-title="Magnituds i mesura">
+  <div class="hero">
+    <div class="eyebrow">Unitat 0 <span class="sep">·</span> Tema 1</div>
+    <h1>Mesurar és comparar. <em>Amb una unitat.</em></h1>
+    <p class="lead">Tot el que la física estudia es pot posar en un nombre. Aquest tema explica què és una magnitud, per què un nombre sol no diu res, i quines magnituds es poden sumar entre elles.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>Una <strong>magnitud física</strong> és qualsevol cosa que es pot mesurar i escriure com un nombre seguit d'una unitat: 1,68 m, 55 kg, 14 s.</p></div>
+    <div class="prose">
+      <p>L'alçada d'una persona és una magnitud. La seva simpatia no ho és: no hi ha cap aparell que la mesuri ni cap unitat en què expressar-la. Aquesta és la frontera de la física: si es pot mesurar, la física en pot parlar.</p>
+      <p><strong>Mesurar</strong> vol dir comparar la magnitud amb una altra de la mateixa mena que hem decidit que val 1: la <strong>unitat</strong>. Quan dius que fas 1,68 m estàs dient "la meva alçada és 1,68 vegades el metre". Per això una mesura sempre té dues parts:</p>
+      <div class="formula">magnitud = valor + unitat<small>180 cm · 14 s · 80 km/h</small></div>
+      <p>Un nombre sol és un error d'examen segur. "La velocitat és 20" no vol dir res: 20 km/h és una bici, 20 m/s és un cotxe a 72 km/h.</p>
+
+      <h3>Directe o indirecte</h3>
+      <div class="spec">
+        <div><span>Mesurament directe</span><span>Llegeixes l'aparell i ja tens el valor. Un regle per a la longitud, una balança per a la massa, un cronòmetre per al temps.</span></div>
+        <div><span>Mesurament indirecte</span><span>Mesures altres coses i calcules. L'àrea d'una habitació: mesures dos costats i multipliques. La velocitat mitjana: mesures distància i temps i divideixes.</span></div>
+      </div>
+
+      <h3>Què es pot sumar i què no</h3>
+      <p>Només es poden <strong>sumar i restar magnituds iguals</strong>: metres amb metres, segons amb segons. Sumar 3 m i 2 s no té sentit. En canvi, <strong>multiplicar i dividir</strong> magnituds diferents sí, i és així com neixen les magnituds noves: metres dividits per segons donen una velocitat (m/s).</p>
+      <p>Hi ha una segona divisió que trobaràs a tot el curs: les magnituds <strong>escalars</strong> (un nombre i prou: temperatura, massa, temps) i les <strong>vectorials</strong> (cal dir també cap a on: velocitat, força, desplaçament). Té tema propi més endavant.</p>
+    </div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>Pujar a la bàscula és un mesurament directe. Calcular quant trigaràs a arribar a Berga amb el bus si van a 60 km/h i hi ha 20 km és indirecte: no ho llegeixes enlloc, ho dedueixes.</p>
+      <p>I quan diuen "avui fa 30" tothom entén <em>30 graus</em> perquè el context posa la unitat. A física la unitat s'escriu sempre, perquè el context no hi és.</p>
+    </div>
+
+    <div class="interactive" data-interactive="valorunitat"></div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Escriure el resultat sense unitat.</strong><p>"x = 25". Vint-i-cinc què? A l'examen és mitja resposta. Escriu sempre "x = 25 m".</p></div>
+      <div class="mistake"><strong>Sumar coses diferents.</strong><p>3 km + 200 m = 203? No: primer ho poses tot en la mateixa unitat (3000 m + 200 m = 3200 m). Aquesta és la raó de ser dels factors de conversió del tema següent.</p></div>
+      <div class="mistake"><strong>Pensar que la unitat és decorativa.</strong><p>La unitat forma part del valor. 2 h i 2 min són nombres iguals i temps molt diferents.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">Quina d'aquestes coses és una magnitud física?</div><div class="opts"><button>La bellesa d'un paisatge</button><button>La temperatura de l'aigua d'una piscina</button><button>La sort en un examen</button></div><div class="why" hidden></div><div class="expl" hidden>La temperatura es mesura amb un termòmetre i s'expressa en graus o en kelvins. La bellesa i la sort no tenen aparell ni unitat.</div></div>
+      <div class="q" data-answer="2"><div class="qt">Un company escriu "la velocitat del cotxe és 30". Què li falta?</div><div class="opts"><button>Res, està bé</button><button>Un decimal</button><button>La unitat</button></div><div class="why" hidden></div><div class="expl" hidden>30 km/h i 30 m/s són velocitats molt diferents (la segona són 108 km/h). Sense unitat el nombre no vol dir res.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Calcular l'àrea d'un full mesurant-ne els costats és un mesurament...</div><div class="opts"><button>Indirecte</button><button>Directe</button><button>Escalar</button></div><div class="why" hidden></div><div class="expl" hidden>L'àrea no la llegeixes en cap aparell: la calcules a partir de dues mesures directes de longitud.</div></div>
+    </div>
+    <div class="askbar"><p><strong>No ha quedat clar?</strong> El tutor ja sap que ets al tema de magnituds i mesura.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 0.2 SI -->
+<section class="view" id="t-si" data-topic="si" data-unit="0" data-num="0.2" data-title="Unitats, prefixos i conversions">
+  <div class="hero">
+    <div class="eyebrow">Unitat 0 <span class="sep">·</span> Tema 2</div>
+    <h1>Set unitats per a tot. <em>I una manera de canviar-les.</em></h1>
+    <p class="lead">El Sistema Internacional és l'acord perquè un físic de Bagà i un de Tòquio parlin dels mateixos metres. Aquí veuràs les set unitats base, els prefixos (kilo, mil·li...) i el truc dels factors de conversió, que és el que més sortirà als exercicis.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>Hi ha <strong>set magnituds fonamentals</strong> amb la seva unitat. Totes les altres (velocitat, força, energia...) es construeixen combinant aquestes set.</p></div>
+
+    <div class="tablewrap"><table class="data">
+      <thead><tr><th>Magnitud</th><th>Unitat SI</th><th>Símbol</th><th>Dimensió</th><th>Per què serveix</th></tr></thead>
+      <tbody>
+        <tr><td>Longitud</td><td>metre</td><td class="mono">m</td><td class="mono">L</td><td>Distàncies, alçades, desplaçaments</td></tr>
+        <tr><td>Massa</td><td>quilogram</td><td class="mono">kg</td><td class="mono">M</td><td>Quanta matèria hi ha</td></tr>
+        <tr><td>Temps</td><td>segon</td><td class="mono">s</td><td class="mono">T</td><td>Durades, instants</td></tr>
+        <tr><td>Intensitat de corrent</td><td>ampere</td><td class="mono">A</td><td class="mono">I</td><td>Electricitat (més endavant)</td></tr>
+        <tr><td>Temperatura</td><td>kelvin</td><td class="mono">K</td><td class="mono">Θ</td><td>0 K és el fred absolut; 0 °C són 273 K</td></tr>
+        <tr><td>Quantitat de substància</td><td>mol</td><td class="mono">mol</td><td class="mono">N</td><td>Química: comptar partícules</td></tr>
+        <tr><td>Intensitat lluminosa</td><td>candela</td><td class="mono">cd</td><td class="mono">J</td><td>Llum</td></tr>
+      </tbody>
+    </table></div>
+    <div class="prose">
+      <p>Fixa't que la unitat de massa és el <strong>quilogram</strong>, amb el prefix inclòs, i que el temps es mesura en segons, mai en hores o minuts quan treballes "en unitats del SI". Aquest curs faràs servir sobretot les tres primeres: m, kg, s.</p>
+      <p>Des del 2018 les set unitats es defineixen a partir de constants de la natura (la velocitat de la llum, la constant de Planck...), no a partir d'objectes. Abans el quilogram era un cilindre de metall guardat a França; si el cilindre perdia un àtom, canviava la massa de tot el món. Ara el metre és "la distància que fa la llum en 1/299 792 458 segons", i això és igual a tot l'univers.</p>
+
+      <h3>Prefixos: multiplicar per potències de 10</h3>
+      <p>Els prefixos són abreviatures per no escriure zeros. "Kilo" vol dir mil, sigui davant de metre, gram o watt.</p>
+    </div>
+    <div class="interactive" data-interactive="prefixos"></div>
+
+    <div class="prose">
+      <h3>Notació científica</h3>
+      <p>Per a nombres molt grans o molt petits s'escriu un nombre entre 1 i 10 multiplicat per una potència de 10. La massa de la Terra és 5,97·10<sup>24</sup> kg (un 597 seguit de 22 zeros); la càrrega d'un electró és 1,602·10<sup>-19</sup> C. L'exponent positiu vol dir "mou la coma cap a la dreta"; negatiu, "cap a l'esquerra".</p>
+
+      <h3>Factors de conversió: la tècnica que ho resol tot</h3>
+      <p>Un factor de conversió és una fracció que val 1 perquè el numerador i el denominador són la mateixa quantitat escrita en dues unitats: <span class="k">1 km / 1000 m</span> o <span class="k">1000 m / 1 km</span>. Multiplicar per 1 no canvia el valor, però permet <em>anul·lar unitats</em> com si fossin nombres. L'únic que has de decidir és quina va a dalt i quina a baix: la unitat que vols eliminar ha de quedar en el costat contrari al que ja tens.</p>
+      <div class="formula">72 km/h · <span class="frac"><span>1000 m</span><span>1 km</span></span> · <span class="frac"><span>1 h</span><span>3600 s</span></span> = 20 m/s<small>km s'anul·la amb km, h amb h</small></div>
+      <p>Amb superfícies i volums l'exponent multiplica: 1 m = 100 cm, però 1 m<sup>2</sup> = 100<sup>2</sup> = 10 000 cm<sup>2</sup>, i 1 m<sup>3</sup> = 1 000 000 cm<sup>3</sup>. Aquest és l'error més freqüent del tema.</p>
+    </div>
+    <div class="interactive" data-interactive="conversor"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>Al velocímetre del cotxe, 90 km/h. A física, 25 m/s: cada segon, el cotxe avança 25 metres, més o menys la llargada d'una piscina. Aquesta és la mida real d'una velocitat, i és la que et diu per què no es pot frenar en sec.</p>
+      <p>Truc que no falla: de km/h a m/s, <em>divideix per 3,6</em>. De m/s a km/h, multiplica per 3,6. I si un dia dubtes del truc, fas la cadena de fraccions i el redescobreixes.</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>1 m<sup>2</sup> = 100 cm<sup>2</sup>.</strong><p>No: 1 m² és un quadrat de 100 cm per 100 cm, o sigui 10 000 cm². Amb volums, 1 000 000. L'exponent afecta també el factor.</p></div>
+      <div class="mistake"><strong>Posar la fracció al revés.</strong><p>Si el km et queda a dalt i a dalt, no s'anul·la. Comprova sempre que la unitat que vols fer desaparèixer surt una vegada a dalt i una a baix.</p></div>
+      <div class="mistake"><strong>Barrejar unitats en una mateixa fórmula.</strong><p>Distància en km i temps en segons dona una velocitat en km/s, que no és el que volies. Passa-ho tot al SI abans de substituir.</p></div>
+      <div class="mistake"><strong>Confondre múltiples i submúltiples.</strong><p>mm és mil·límetre (10<sup>-3</sup>), Mm és megàmetre (10<sup>6</sup>). Majúscula i minúscula importen.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">Quants m/s són 36 km/h?</div><div class="opts"><button>36 m/s</button><button>10 m/s</button><button>129,6 m/s</button></div><div class="why" hidden></div><div class="expl" hidden>36 km/h · (1000 m / 1 km) · (1 h / 3600 s) = 36 000 / 3600 = 10 m/s. O directament 36 / 3,6.</div></div>
+      <div class="q" data-answer="2"><div class="qt">1 dm<sup>3</sup> equival a...</div><div class="opts"><button>10 cm<sup>3</sup></button><button>100 cm<sup>3</sup></button><button>1000 cm<sup>3</sup></button></div><div class="why" hidden></div><div class="expl" hidden>1 dm = 10 cm, i en volum l'exponent és 3: 10³ = 1000 cm³. Per això 1 litre (que és 1 dm³) són 1000 mL.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Quina d'aquestes és una unitat fonamental del SI?</div><div class="opts"><button>El segon</button><button>El newton</button><button>El km/h</button></div><div class="why" hidden></div><div class="expl" hidden>El newton es construeix (kg·m/s²) i el km/h no és del SI. El segon és una de les set unitats base.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Una conversió que se't resisteix?</strong> Escriu-la al tutor tal com la tens al llibre.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 0.3 DIMENSIONAL -->
+<section class="view" id="t-dimensional" data-topic="dimensional" data-unit="0" data-num="0.3" data-title="Magnituds derivades i equació dimensional">
+  <div class="hero">
+    <div class="eyebrow">Unitat 0 <span class="sep">·</span> Tema 3</div>
+    <h1>Tota magnitud té un ADN. <em>L'equació dimensional.</em></h1>
+    <p class="lead">La velocitat és "longitud entre temps". La força és "massa per longitud entre temps al quadrat". Aquesta recepta de fonamentals es diu equació dimensional i serveix per saber en quines unitats va una cosa i per detectar fórmules que no poden ser certes.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>Una <strong>magnitud derivada</strong> es construeix multiplicant i dividint fonamentals. La seva <strong>equació dimensional</strong> diu quines fonamentals hi entren i amb quin exponent.</p></div>
+    <div class="prose">
+      <p>Parteixes de la definició. La velocitat és el que has avançat dividit pel temps: <span class="k">v = Δx / Δt</span>. Una longitud dividida per un temps. Amb claudàtors, que es llegeixen "dimensió de":</p>
+      <div class="formula">[v] = [x] / [t] = L · T<sup>-1</sup><small>i per tant la unitat SI és m/s</small></div>
+      <p>L'acceleració és velocitat entre temps: <span class="k">[a] = L·T<sup>-1</sup> / T = L·T<sup>-2</sup></span>, unitat m/s². La força és massa per acceleració: <span class="k">[F] = M·L·T<sup>-2</sup></span>, unitat kg·m/s², que té nom propi, newton. Sempre el mateix camí: definició, substitueixes cada peça per la seva dimensió, simplifiques exponents.</p>
+
+      <h3>Per a què serveix de debò</h3>
+      <div class="spec">
+        <div><span>Trobar unitats</span><span>Si no recordes en què es mesura la pressió, fas la dimensional: F/S dona M·L<sup>-1</sup>·T<sup>-2</sup>, o sigui kg/(m·s²), o sigui N/m², que és el pascal.</span></div>
+        <div><span>Detectar fórmules falses</span><span>Els dos costats d'un igual han de tenir la mateixa equació dimensional. Si a l'examen escrius x = v·t² i comproves: [v·t²] = L·T<sup>-1</sup>·T² = L·T, i [x] = L. No quadra: la fórmula és falsa segur.</span></div>
+        <div><span>El que NO fa</span><span>Que una fórmula sigui dimensionalment correcta no vol dir que sigui certa. E = m·v² passa la prova igual que E = ½·m·v², perquè el ½ no té dimensions. La dimensional descarta, però no confirma.</span></div>
+      </div>
+    </div>
+    <div class="interactive" data-interactive="dimensional"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>És el mateix que fas amb una recepta: si el resultat ha de ser un pastís, els ingredients han de ser farina, ous i sucre, no un martell. Si en una fórmula de velocitat t'apareix una massa, alguna cosa s'ha trencat abans.</p>
+      <p>Als exàmens és <em>un detector de mentides gratis</em>: tarda deu segons i et diu si el que has escrit pot ser correcte.</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Oblidar que els nombres no tenen dimensió.</strong><p>El 2, el ½, el π, els graus d'un angle: tots són "adimensionals". No els escriguis a l'equació dimensional.</p></div>
+      <div class="mistake"><strong>Confondre dimensió i unitat.</strong><p>La dimensió de la velocitat és L·T<sup>-1</sup>; la unitat és m/s (o km/h). La dimensió és la família; la unitat, un membre concret.</p></div>
+      <div class="mistake"><strong>Sumar dimensions diferents.</strong><p>Si en una fórmula sumes un terme que és L amb un que és L·T<sup>-1</sup>, ja és falsa. Cada sumand ha de tenir les mateixes dimensions.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">Quina és l'equació dimensional de l'energia cinètica E = ½·m·v²?</div><div class="opts"><button>M·L·T<sup>-1</sup></button><button>M·L<sup>2</sup>·T<sup>-2</sup></button><button>M·L<sup>2</sup>·T<sup>-1</sup></button></div><div class="why" hidden></div><div class="expl" hidden>[m] = M i [v²] = (L·T⁻¹)² = L²·T⁻². El ½ no compta. Resultat: M·L²·T⁻², que en unitats és kg·m²/s², el joule.</div></div>
+      <div class="q" data-answer="2"><div class="qt">La fórmula x = x₀ + a·t és...</div><div class="opts"><button>Correcta</button><button>Correcta només si a és petita</button><button>Impossible: no és homogènia</button></div><div class="why" hidden></div><div class="expl" hidden>[a·t] = L·T⁻²·T = L·T⁻¹, que és una velocitat, no una longitud. Els dos costats no tenen la mateixa dimensió. La bona és x = x₀ + v₀·t + ½·a·t².</div></div>
+      <div class="q" data-answer="0"><div class="qt">Una fórmula passa la prova dimensional. Llavors...</div><div class="opts"><button>Pot ser certa, però no és segur</button><button>És certa segur</button><button>És falsa segur</button></div><div class="why" hidden></div><div class="expl" hidden>La prova dimensional només descarta. Un factor numèric equivocat (2 en lloc de ½) no el detecta.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Vols que comprovem una fórmula junts?</strong> Escriu-la i el tutor la desmunta dimensió a dimensió.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 0.4 VECTORS -->
+<section class="view" id="t-vectors" data-topic="vectors" data-unit="0" data-num="0.4" data-title="Vectors: mòdul, direcció, sentit i components">
+  <div class="hero">
+    <div class="eyebrow">Unitat 0 <span class="sep">·</span> Tema 4</div>
+    <h1>Un vector és una fletxa. <em>Amb tres coses a dir.</em></h1>
+    <p class="lead">Dir que un cotxe va a 80 km/h no és tota la informació: cap a on? Les magnituds que necessiten "cap a on" es representen amb fletxes, els vectors. Aquest és el tema que més val la pena entendre bé, perquè torna a cada unitat del curs.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>Un <strong>vector</strong> és un segment amb punta de fletxa que diu <strong>quant</strong> (mòdul), <strong>per quina recta</strong> (direcció) i <strong>cap a quin costat</strong> (sentit).</p></div>
+    <div class="prose">
+      <p>Les magnituds <strong>escalars</strong> queden completament descrites amb un nombre i una unitat: la temperatura de l'aula, la massa d'una poma, el temps d'una cursa. Les <strong>vectorials</strong> necessiten més: si dic que el vent bufa a 40 km/h no saps si t'ha d'afavorir o frenar fins que et dic que ve del nord. Velocitat, força, desplaçament i acceleració són vectorials.</p>
+      <div class="spec">
+        <div><span>Mòdul</span><span>La llargada de la fletxa: el valor de la magnitud. Sempre positiu. S'escriu |a| o simplement a.</span></div>
+        <div><span>Direcció</span><span>La recta sobre la qual està la fletxa (horitzontal, vertical, inclinada 30°...). Una recta té dos sentits possibles.</span></div>
+        <div><span>Sentit</span><span>Cap a on apunta la punta. "Cap a la dreta" i "cap a l'esquerra" són la mateixa direcció i sentits contraris.</span></div>
+        <div><span>Punt d'aplicació</span><span>D'on surt. Per a la majoria del que farem (vectors lliures) no importa: dues fletxes iguals en lloc diferent són el mateix vector.</span></div>
+      </div>
+      <p>Al llibre els vectors porten una fletxeta a sobre (a⃗) o van en negreta; el mòdul es posa sense fletxa. Dos vectors amb el mateix mòdul, direcció i sentit són <strong>equipol·lents</strong> (iguals a tots els efectes). Si només canvia el sentit, són <strong>oposats</strong>: a⃗ i −a⃗.</p>
+
+      <h3>Components: descriure la fletxa amb dos nombres</h3>
+      <p>Una fletxa al pla es pot descriure dient quant avança en horitzontal i quant en vertical: les <strong>components cartesianes</strong> (a<sub>x</sub>, a<sub>y</sub>). Són com les instruccions "camina 3 carrers cap a l'est i 5 cap al nord". A partir d'elles surt tot:</p>
+      <div class="formula">a = √(a<sub>x</sub>² + a<sub>y</sub>²) &nbsp;&nbsp;&nbsp; tg α = a<sub>y</sub> / a<sub>x</sub><small>mòdul per Pitàgores · angle amb l'eix X</small></div>
+      <p>I al revés, si saps el mòdul i l'angle (<strong>coordenades polars</strong>): a<sub>x</sub> = a·cos α i a<sub>y</sub> = a·sin α. Si la trigonometria et fa respecte, hi ha un tema d'eines al final.</p>
+      <p>Els <strong>vectors unitaris</strong> i⃗ = (1, 0) i j⃗ = (0, 1) són passos d'una unitat cap a la dreta i cap amunt. Qualsevol vector és "tants passos cap a la dreta i tants cap amunt": a⃗ = a<sub>x</sub>·i⃗ + a<sub>y</sub>·j⃗. Així, (3, 5) i 3i⃗ + 5j⃗ són exactament el mateix vector escrit de dues maneres.</p>
+    </div>
+    <div class="interactive" data-interactive="vector"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>Al mapa del mòbil, "el Pedraforca és a 12 km" és un escalar. "A 12 km cap al nord-oest" és un vector. La fletxa blava que t'indica cap a on caminar és un vector amb mòdul (la distància), direcció i sentit.</p>
+      <p>Les components són el que fa el GPS per dins: <em>tants metres est-oest, tants nord-sud</em>. Dos nombres i la fletxa queda determinada.</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Confondre direcció i sentit.</strong><p>"Cap amunt" i "cap avall" tenen la mateixa direcció (vertical) i sentit contrari. Direcció és la recta; sentit és cap a on.</p></div>
+      <div class="mistake"><strong>Un mòdul negatiu.</strong><p>El mòdul és una llargada, sempre positiva o zero. El signe negatiu, en tot cas, va a una component (a<sub>x</sub> = −3) o davant del vector (−a⃗).</p></div>
+      <div class="mistake"><strong>L'angle de la calculadora sense pensar.</strong><p>tg<sup>-1</sup> només dona angles entre −90° i 90°. Si a<sub>x</sub> és negatiu, suma 180° al resultat. Dibuixa sempre el vector per veure en quin quadrant és.</p></div>
+      <div class="mistake"><strong>Sumar mòduls per trobar el mòdul d'una suma.</strong><p>Dos vectors de mòdul 3 i 4 sumen un vector de mòdul 5 si són perpendiculars, 7 si van igual, 1 si van contraris. Cal sumar components, no mòduls.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">Quin és el mòdul del vector (6, −8)?</div><div class="opts"><button>−2</button><button>10</button><button>14</button></div><div class="why" hidden></div><div class="expl" hidden>√(6² + (−8)²) = √(36 + 64) = √100 = 10. El signe de la component no fa negatiu el mòdul.</div></div>
+      <div class="q" data-answer="2"><div class="qt">Quina magnitud és vectorial?</div><div class="opts"><button>La temperatura</button><button>La massa</button><button>La força</button></div><div class="why" hidden></div><div class="expl" hidden>Una força de 10 N no queda definida fins que dius cap a on empeny. La temperatura i la massa són nombres i prou.</div></div>
+      <div class="q" data-answer="0"><div class="qt">El vector 2i⃗ − 3j⃗ en components és...</div><div class="opts"><button>(2, −3)</button><button>(−3, 2)</button><button>(2, 3)</button></div><div class="why" hidden></div><div class="expl" hidden>El coeficient de i⃗ és la component x i el de j⃗ la component y. Dues escriptures del mateix vector.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Els vectors són la base de tot el curs.</strong> Si hi ha una sola cosa a preguntar, que sigui aquesta.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 0.5 OPERACIONS VECTORS -->
+<section class="view" id="t-operacions-vectors" data-topic="operacions-vectors" data-unit="0" data-num="0.5" data-title="Operacions amb vectors">
+  <div class="hero">
+    <div class="eyebrow">Unitat 0 <span class="sep">·</span> Tema 5</div>
+    <h1>Sumar fletxes, estirar-les. <em>I multiplicar-les.</em></h1>
+    <p class="lead">Amb els vectors es fan quatre coses aquest curs: sumar-los, multiplicar-los per un nombre, trobar el vector unitari i fer el producte escalar. Totes quatre es fan component a component, i totes quatre tenen un dibuix darrere.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>Les operacions amb vectors es fan <strong>component a component</strong>: la x amb la x, la y amb la y. El producte escalar és l'única que dona un nombre en comptes d'un vector.</p></div>
+    <div class="prose">
+      <h3>Suma i resta</h3>
+      <p>Gràficament, poses la segona fletxa a continuació de la primera i la suma va de l'inici de la primera al final de la segona. Amb components:</p>
+      <div class="formula">a⃗ + b⃗ = (a<sub>x</sub> + b<sub>x</sub>)·i⃗ + (a<sub>y</sub> + b<sub>y</sub>)·j⃗<small>restar és sumar l'oposat: a⃗ − b⃗ = a⃗ + (−b⃗)</small></div>
+
+      <h3>Producte per un escalar</h3>
+      <p>Multiplicar el vector per un nombre k l'estira o l'encongeix: k·a⃗ = (k·a<sub>x</sub>, k·a<sub>y</sub>). Mateixa direcció. Si k és negatiu, canvia el sentit. 2a⃗ és el doble de llarg; −a⃗ és igual de llarg i cap a l'altra banda; ½a⃗ és la meitat.</p>
+
+      <h3>Vector unitari</h3>
+      <p>Si divideixes un vector pel seu propi mòdul obtens una fletxa de llargada 1 que apunta igual: u⃗<sub>a</sub> = a⃗ / |a⃗|. Serveix per dir "la direcció i el sentit d'a⃗" sense el mòdul. Exemple del llibre: c⃗ = 7i⃗ − 6j⃗ té mòdul 9,22, i u⃗<sub>c</sub> = 0,76i⃗ − 0,65j⃗ (comprova que 0,76² + 0,65² dona 1).</p>
+
+      <h3>Producte escalar: quant van "d'acord" dos vectors</h3>
+      <p>Té dues fórmules que donen el mateix nombre. La geomètrica: el producte dels mòduls pel cosinus de l'angle que formen. L'algebraica: la suma dels productes de components.</p>
+      <div class="formula">a⃗ · b⃗ = a · b · cos α = a<sub>x</sub>·b<sub>x</sub> + a<sub>y</sub>·b<sub>y</sub><small>el resultat és un NOMBRE, no un vector</small></div>
+      <p>La intuïció: el producte escalar mesura quant de b⃗ va en la direcció d'a⃗. Si van igual (α = 0°), és el màxim, a·b. Si són perpendiculars (α = 90°), és zero: no tenen res en comú. Si van al revés (α = 180°), és −a·b. Positiu vol dir "més aviat d'acord", negatiu "més aviat en contra".</p>
+      <p>I d'aquí surt el truc per trobar l'<strong>angle entre dos vectors</strong>: igualant les dues fórmules, cos α = (a<sub>x</sub>·b<sub>x</sub> + a<sub>y</sub>·b<sub>y</sub>) / (a·b). Exemple del llibre: a⃗ = 4i⃗ − 5j⃗ i b⃗ = 2i⃗ − 8j⃗; el producte escalar és 8 + 40 = 48; els mòduls 6,40 i 8,25; cos α = 0,91; α = 24,6°.</p>
+    </div>
+    <div class="interactive" data-interactive="dosvectors"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>Dues persones empenyen un cotxe avariat. Si empenyen les dues cap endavant, les forces se sumen. Si una empeny cap endavant i l'altra cap a un costat, el cotxe va en diagonal: la suma de vectors. Si empenyen en sentits contraris, es resten i potser el cotxe no es mou.</p>
+      <p>El producte escalar apareixerà quan calculis <em>treball</em>: una força només fa feina en la part que va en la direcció del moviment. Arrossegar una maleta amb la nansa inclinada 45° fa menys feina útil que estirar-la horitzontalment amb la mateixa força.</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Fer que el producte escalar sigui un vector.</strong><p>a⃗·b⃗ = 48. Sense fletxa, sense components. És un nombre.</p></div>
+      <div class="mistake"><strong>Sumar mòduls.</strong><p>|a⃗ + b⃗| no és |a⃗| + |b⃗| en general. Suma primer les components i després fes el mòdul de la suma.</p></div>
+      <div class="mistake"><strong>Oblidar el signe en restar.</strong><p>a⃗ − 2b⃗ amb b⃗ = −3i⃗ + 2j⃗: el −2 multiplica les dues components, i −2·(−3) = +6.</p></div>
+      <div class="mistake"><strong>Calculadora en radians.</strong><p>cos<sup>-1</sup>(0,91) ha de donar 24,6°. Si et dona 0,43, estàs en radians.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="2"><div class="qt">Si a⃗ = (1, 2) i b⃗ = (3, −1), quant val a⃗ + b⃗?</div><div class="opts"><button>(4, −1)</button><button>(3, −2)</button><button>(4, 1)</button></div><div class="why" hidden></div><div class="expl" hidden>x: 1 + 3 = 4. y: 2 + (−1) = 1. Component a component.</div></div>
+      <div class="q" data-answer="1"><div class="qt">El producte escalar de dos vectors perpendiculars val...</div><div class="opts"><button>El producte dels mòduls</button><button>Zero</button><button>Un vector perpendicular als dos</button></div><div class="why" hidden></div><div class="expl" hidden>cos 90° = 0, per tant a·b·cos 90° = 0. Comprova amb i⃗ i j⃗: 1·0 + 0·1 = 0.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Quant val (3, 4) · (4, −3)?</div><div class="opts"><button>0</button><button>25</button><button>(12, −12)</button></div><div class="why" hidden></div><div class="expl" hidden>3·4 + 4·(−3) = 12 − 12 = 0. Són perpendiculars, tot i que no ho semblava.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Tens un exercici de vectors a mitges?</strong> Escriu les dades i el tutor et guia pas a pas.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 0.6 ERROR -->
+<section class="view" id="t-error" data-topic="error" data-unit="0" data-num="0.6" data-title="Mesura i error">
+  <div class="hero">
+    <div class="eyebrow">Unitat 0 <span class="sep">·</span> Tema 6</div>
+    <h1>Cap mesura és exacta. <em>I es pot dir quant.</em></h1>
+    <p class="lead">Mesura deu vegades el temps que triga una bola a caure i tindràs deu nombres diferents. Aquest tema explica com donar un resultat honest: un valor, un marge d'error i el nombre just de decimals.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>Una mesura s'escriu <strong>valor ± error</strong>, i l'error relatiu (en %) és el que diu si la mesura és bona o dolenta.</p></div>
+    <div class="prose">
+      <h3>1. Error instrumental: el límit de l'aparell</h3>
+      <p>Cada aparell té una divisió mínima, la seva <strong>sensibilitat</strong>. Un regle amb mil·límetres no pot distingir 23,12 cm de 23,13 cm: el més fi que pots dir és 23,1 cm, i l'error instrumental és 0,1 cm. Una balança digital que marca centèsimes té sensibilitat 0,01 g. El resultat s'escriu (23,1 ± 0,1) cm.</p>
+
+      <h3>2. Xifres significatives: no dir més del que saps</h3>
+      <p>Les <strong>xifres significatives</strong> són les que aporten informació: 23,1 en té tres. Els zeros davant no compten (0,0064 en té dues); els zeros darrere de la coma sí (8,0 cm en té dues i vol dir "he mesurat fins a la dècima i era zero"). Les regles pràctiques:</p>
+      <ul>
+        <li><strong>Sumes i restes:</strong> el resultat té tants decimals com la dada que en té menys. 12 cm³ + 11,5 cm³ = 23 cm³ (no 23,5).</li>
+        <li><strong>Productes i divisions:</strong> tantes xifres significatives com la dada que en té menys. 2,21 · 3,428 = 7,58 (tres xifres, com 2,21).</li>
+        <li><strong>Arrodonir:</strong> si la primera xifra que elimines és 5 o més, puja l'última que conserves. 1,3497 → 1,35; 61,94 → 61,9.</li>
+      </ul>
+
+      <h3>3. Error de mesura: repetir i fer la mitjana</h3>
+      <p>Si repeteixes la mesura n vegades, el millor valor és la <strong>mitjana aritmètica</strong>, i l'error el marca la mesura que més se n'allunya. El procediment del llibre, pas a pas:</p>
+      <div class="steps">
+        <div class="step"><h4>Mitjana</h4><p>m̄ = (m<sub>1</sub> + m<sub>2</sub> + ... + m<sub>n</sub>) / n. Si algun valor és clarament absurd (t'has equivocat de botó), l'elimines abans.</p></div>
+        <div class="step"><h4>Error de cada mesura</h4><p>e<sub>i</sub> = |m<sub>i</sub> − m̄|. Quant s'allunya cadascuna de la mitjana, en positiu.</p></div>
+        <div class="step"><h4>Error absolut</h4><p>e<sub>a</sub> = el més gran dels e<sub>i</sub>. I mai més petit que l'error instrumental: si el cronòmetre aprecia 0,01 s, l'error no pot ser 0,004 s.</p></div>
+        <div class="step"><h4>Resultat i error relatiu</h4><p>(m̄ ± e<sub>a</sub>) unitat. I e<sub>r</sub> = e<sub>a</sub> / m̄ · 100 %. Exemple del llibre: deu temps entre 3,42 i 3,51 s donen t = (3,45 ± 0,06) s, error relatiu 1,7 %.</p></div>
+      </div>
+      <p>L'<strong>error relatiu</strong> és el que compta. Equivocar-se d'1 cm mesurant una taula d'1 m és un 1 %; equivocar-se d'1 cm mesurant un dit de 10 cm és un 10 %. El mateix error absolut, mesures de qualitat molt diferent.</p>
+    </div>
+    <div class="interactive" data-interactive="errors"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>El cronòmetre d'una cursa marca 12,34 s però tu prems el botó amb reflexos humans: el teu error és més gran que el de l'aparell. Per això als 100 m olímpics no cronometren a mà.</p>
+      <p>I quan la bàscula diu 55,0 kg, el zero final <em>no sobra</em>: diu que ha mesurat fins a la dècima. Escriure 55 kg seria llençar informació.</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Donar més decimals que l'aparell.</strong><p>Amb un regle de mil·límetres no pots escriure 23,127 cm. La calculadora dona molts decimals; tu en conserves els que la mesura permet.</p></div>
+      <div class="mistake"><strong>Escriure l'error amb molts decimals.</strong><p>L'error es dona amb una xifra significativa (0,06 s, no 0,0583 s), i el valor s'arrodoneix al mateix decimal que l'error.</p></div>
+      <div class="mistake"><strong>Confondre error absolut i relatiu.</strong><p>L'absolut porta unitats (0,06 s); el relatiu és un tant per cent i no en porta.</p></div>
+      <div class="mistake"><strong>Comptar els zeros de l'esquerra.</strong><p>0,0064 té dues xifres significatives, no cinc. En notació científica es veu clar: 6,4·10<sup>-3</sup>.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">Quantes xifres significatives té 0,0250 m?</div><div class="opts"><button>Dues</button><button>Tres</button><button>Quatre</button></div><div class="why" hidden></div><div class="expl" hidden>Els zeros davant del 2 no compten; el zero de darrere sí. 2, 5, 0: tres xifres. En científica, 2,50·10⁻².</div></div>
+      <div class="q" data-answer="2"><div class="qt">Dues mesures: (100 ± 1) m i (10 ± 1) m. Quina és més precisa?</div><div class="opts"><button>La segona, és més curta</button><button>Igual, tenen el mateix error</button><button>La primera: error relatiu 1 % contra 10 %</button></div><div class="why" hidden></div><div class="expl" hidden>El mateix error absolut pesa molt menys sobre una mesura gran. Compara sempre errors relatius.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Quatre mesures d'una longitud: 12,4; 12,5; 12,4; 12,7 cm. Error absolut?</div><div class="opts"><button>0,2 cm</button><button>0,3 cm</button><button>0,1 cm</button></div><div class="why" hidden></div><div class="expl" hidden>Mitjana 12,5 cm. Desviacions: 0,1; 0; 0,1; 0,2. La més gran és 0,2 cm. Resultat: (12,5 ± 0,2) cm, e_r = 1,6 %.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Tens una taula de mesures del laboratori?</strong> Enganxa-la al tutor i fes el càlcul amb ell.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 0.7 MÈTODE -->
+<section class="view" id="t-metode" data-topic="metode" data-unit="0" data-num="0.7" data-title="El mètode científic">
+  <div class="hero">
+    <div class="eyebrow">Unitat 0 <span class="sep">·</span> Tema 7</div>
+    <h1>Mirar, sospitar, provar. <em>I escriure la llei.</em></h1>
+    <p class="lead">El mètode científic és la manera de passar d'una observació ("les coses de ferro grans pesen més") a una llei amb fórmula (m = ρ·V). Quatre fases que faràs al laboratori amb el pèndol i que et demanaran a l'examen.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>Observes, proposes una explicació que es pugui comprovar, la poses a prova canviant una sola cosa cada vegada, i si les dades l'aguanten, l'enuncies com a <strong>llei</strong>.</p></div>
+    <div class="steps">
+      <div class="step"><h4>Observació</h4><p>Mirar amb atenció un fenomen i fer-se una pregunta concreta. "Els objectes de ferro més grans pesen més. Hi ha una relació fixa entre massa i volum?"</p></div>
+      <div class="step"><h4>Hipòtesi</h4><p>Una afirmació raonada i provisional que <strong>es pugui comprovar</strong>. "Per a un mateix material, la massa és proporcional al volum." Una hipòtesi que no es pugui contradir amb cap experiment no és científica.</p></div>
+      <div class="step"><h4>Experimentació</h4><p>Dissenyar un experiment en condicions controlades, <strong>canviant una sola variable</strong> i mesurant. Peces de ferro de volums diferents, balança i proveta, taula de dades, gràfic m-V.</p></div>
+      <div class="step"><h4>Llei</h4><p>Si les dades confirmen la hipòtesi, s'enuncia la llei, sovint amb fórmula: m = ρ·V, i ρ = 7,8 g/cm³ per al ferro. Si la contradiuen, es refusa la hipòtesi i se'n proposa una altra. Un conjunt de lleis coherents forma una <strong>teoria</strong>.</p></div>
+    </div>
+    <div class="prose">
+      <p>La part que costa d'entendre: una llei mai no queda "demostrada" per sempre. Queda confirmada mentre cap experiment la contradigui. Una sola mesura ben feta que no encaixi obliga a revisar-la. Això és el que fa que la ciència sigui diferent d'una opinió.</p>
+      <h3>Com es llegeix "proporcional"</h3>
+      <p>Dues magnituds són <strong>directament proporcionals</strong> si en doblar una es dobla l'altra, i el quocient entre elles és sempre el mateix. Al gràfic surt una <strong>recta que passa per l'origen</strong>, i el pendent és aquesta constant. En l'exemple del ferro, m/V val 7,8 en totes les files de la taula: aquesta constant és la densitat.</p>
+    </div>
+    <div class="interactive" data-interactive="densitat"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>El mòbil es descarrega ràpid. Hipòtesi: és la brillantor de la pantalla. Experiment: dos dies amb la brillantor al màxim, dos al mínim, tot la resta igual (mateixes apps, mateix ús). Si canvies alhora la brillantor i les apps, no sabràs mai què ha estat.</p>
+      <p><em>Una variable cada vegada</em> és tota la diferència entre un experiment i una anècdota.</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Una hipòtesi que és una pregunta.</strong><p>"Què passa amb la massa?" no és una hipòtesi. "La massa és proporcional al volum" sí: es pot comprovar i es pot refusar.</p></div>
+      <div class="mistake"><strong>Canviar dues variables alhora.</strong><p>Al pèndol, si canvies la longitud i l'angle al mateix temps no pots saber quin dels dos afecta el període.</p></div>
+      <div class="mistake"><strong>Confondre llei i teoria.</strong><p>La llei descriu una relació concreta (m = ρ·V). La teoria és el marc que explica un conjunt de lleis.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">Al gràfic massa-volum d'un material surt una recta per l'origen. El pendent és...</div><div class="opts"><button>El volum</button><button>La densitat</button><button>La massa</button></div><div class="why" hidden></div><div class="expl" hidden>Pendent = m/V, constant per a cada material: la densitat. Per al ferro, 7,8 g/cm³.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Per comprovar si el període del pèndol depèn de la massa, què fas?</div><div class="opts"><button>Canviar només la massa, mantenint longitud i angle</button><button>Canviar massa i longitud alhora</button><button>Mesurar una sola vegada amb la massa gran</button></div><div class="why" hidden></div><div class="expl" hidden>Una variable cada vegada. I mesurar diverses oscil·lacions, per reduir l'error.</div></div>
+      <div class="q" data-answer="2"><div class="qt">Un experiment ben fet contradiu una llei acceptada. Què passa?</div><div class="opts"><button>L'experiment està malament segur</button><button>Res, les lleis no canvien</button><button>Cal revisar la llei</button></div><div class="why" hidden></div><div class="expl" hidden>Una llei val mentre cap experiment la contradigui. Primer es repeteix l'experiment; si es confirma, la llei es corregeix o es limita.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Vols preparar la pràctica del pèndol?</strong> El tutor et pot ajudar a escriure hipòtesis i a muntar la taula de dades.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 1.1 MOVIMENT -->
+<section class="view" id="t-moviment" data-topic="moviment" data-unit="1" data-num="1.1" data-title="Moviment, referència i trajectòria">
+  <div class="hero">
+    <div class="eyebrow">Unitat 1 <span class="sep">·</span> Tema 1</div>
+    <h1>Moure's és canviar de lloc. <em>Respecte d'algú.</em></h1>
+    <p class="lead">Estàs quieta a la butaca del bus i alhora vas a 60 km/h per la carretera de Berga. Les dues coses són veritat. La cinemàtica comença per decidir des d'on mires.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>Un cos es <strong>mou</strong> si la seva posició canvia amb el temps <strong>respecte d'un sistema de referència</strong>. Sense referència, la pregunta "es mou?" no té resposta.</p></div>
+    <div class="prose">
+      <p>La <strong>cinemàtica</strong> descriu com es mouen les coses (on són, com de ràpid, si acceleren) sense preguntar-se per què. El per què (les forces) és la dinàmica, més endavant.</p>
+      <p>Per simplificar, el cos que es mou el tractem com un punt: un <strong>mòbil puntual</strong> o partícula. Un cotxe que va de Bagà a Barcelona és un punt al mapa; no ens importa que giri les rodes ni que sigui llarg.</p>
+      <h3>El sistema de referència</h3>
+      <p>És el lloc des d'on mesures: un <strong>origen</strong> (el punt zero), uns <strong>eixos</strong> (X, Y, Z) per dir cap a on és positiu, i un <strong>instant zero</strong> per començar a comptar el temps. Els tries tu. A la unitat 1 tot passa sobre una recta, l'eix X, i n'hi ha prou amb un signe per dir el sentit: cap a la dreta positiu, cap a l'esquerra negatiu.</p>
+      <p><strong>El moviment és relatiu.</strong> El passatger del bus està quiet respecte del seient (posició que no canvia) i es mou respecte de la carretera. Cap dels dos observadors té més raó que l'altre. No existeix un punt de l'univers "quiet de veritat" des d'on mesurar; ni la Terra, que gira i orbita.</p>
+      <h3>La trajectòria</h3>
+      <p>És la línia que dibuixa el mòbil en passar: el conjunt de totes les posicions per on ha estat. Segons la forma de la trajectòria el moviment es classifica:</p>
+      <div class="tags"><span>rectilini: línia recta (aquesta unitat)</span><span>circular: circumferència (la sínia, el rentaplats)</span><span>parabòlic: una pilota llançada</span><span>el·líptic: els planetes</span><span>helicoidal: un cargol</span></div>
+    </div>
+    <div class="interactive" data-interactive="relatiu"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>Al tren, quan el del costat arrenca, durant un segon no saps si et mous tu o ell. El cervell no té sistema de referència fins que mira l'andana. Aquesta confusió d'un segon és tota la idea del tema.</p>
+      <p>I quan dius "la classe és al segon pis" estàs usant un origen (planta baixa), un eix (cap amunt) i una unitat (pisos). <em>Un sistema de referència sense saber-ho.</em></p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Pensar que "quiet" és absolut.</strong><p>Quiet sempre és "quiet respecte de". La pissarra està quieta respecte de l'aula i va a 30 km/s respecte del Sol.</p></div>
+      <div class="mistake"><strong>Canviar d'origen a mig problema.</strong><p>Si dos mòbils es mouen, cal descriure'ls tots dos des del mateix origen i amb el mateix instant zero. Si no, els resultats no es poden comparar.</p></div>
+      <div class="mistake"><strong>Confondre trajectòria amb gràfic x-t.</strong><p>El gràfic posició-temps d'un moviment rectilini pot ser una corba i la trajectòria continuar sent una recta. Són dues coses diferents.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="2"><div class="qt">Una motxilla a la lleixa del bus en marxa...</div><div class="opts"><button>Està quieta</button><button>Es mou</button><button>Depèn de la referència</button></div><div class="why" hidden></div><div class="expl" hidden>Respecte del bus, quieta. Respecte de la carretera, es mou a la velocitat del bus. Sense referència la pregunta no està completa.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Què estudia la cinemàtica?</div><div class="opts"><button>Com es mouen els cossos, sense les causes</button><button>Per què es mouen els cossos</button><button>Només els moviments rectilinis</button></div><div class="why" hidden></div><div class="expl" hidden>Descriu posició, velocitat i acceleració. Les causes (forces) són la dinàmica.</div></div>
+      <div class="q" data-answer="1"><div class="qt">La trajectòria d'una pedra llançada en diagonal és...</div><div class="opts"><button>Rectilínia</button><button>Parabòlica</button><button>Circular</button></div><div class="why" hidden></div><div class="expl" hidden>Puja i baixa mentre avança: dibuixa una paràbola. És un moviment en dues dimensions, que veuràs més endavant.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Dubtes sobre què vol dir "relatiu"?</strong> És el moment de preguntar.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 1.2 POSICIÓ -->
+<section class="view" id="t-posicio" data-topic="posicio" data-unit="1" data-num="1.2" data-title="Posició, desplaçament i distància">
+  <div class="hero">
+    <div class="eyebrow">Unitat 1 <span class="sep">·</span> Tema 2</div>
+    <h1>On ets, quant t'has mogut. <em>I quant has caminat.</em></h1>
+    <p class="lead">Tres coses que semblen la mateixa i no ho són. Si vas de casa a l'institut i tornes, has caminat molt i t'has desplaçat zero. Aquest tema ensenya a distingir-les, que és la trampa número u dels exàmens de cinemàtica.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>La <strong>posició</strong> és on ets. El <strong>desplaçament</strong> és final menys inicial. La <strong>distància</strong> és el camí que has fet de veritat.</p></div>
+    <div class="prose">
+      <div class="spec">
+        <div><span>Temps · t</span><span>Escalar, en segons. Un <strong>instant</strong> és un punt del temps (t = 5 s); un <strong>interval</strong> és una durada: Δt = t<sub>2</sub> − t<sub>1</sub>. La lletra Δ (delta) sempre vol dir "final menys inicial".</span></div>
+        <div><span>Posició · x</span><span>El punt on és el mòbil, mesurat des de l'origen, amb signe. x = +3 km és a 3 km cap al costat positiu; x = −2 km, cap al negatiu. En el pla és un vector r⃗ = x·i⃗ + y·j⃗ que va de l'origen al mòbil.</span></div>
+        <div><span>Desplaçament · Δx</span><span>El canvi de posició: Δx = x<sub>2</sub> − x<sub>1</sub>. És un vector: pot ser positiu (has anat cap al costat positiu), negatiu o zero (has acabat on eres). Només depèn d'on comences i on acabes.</span></div>
+        <div><span>Distància recorreguda</span><span>La longitud del camí seguit, comptant tot el que has caminat. Sempre positiva. Coincideix amb el desplaçament només si vas en línia recta i sempre en el mateix sentit.</span></div>
+      </div>
+      <div class="formula">Δx = x<sub>final</sub> − x<sub>inicial</sub><small>final menys inicial, sempre en aquest ordre</small></div>
+      <p>L'<strong>equació del moviment</strong> és la funció que dona la posició a cada instant, x(t). Si la tens, saps on és el mòbil en qualsevol moment: només cal substituir el temps. Tota la cinemàtica és buscar aquesta funció.</p>
+      <p>Exemple del llibre: cinc grups surten de la plaça (x = 0) cap a una ermita a 5 km. Al cap d'una hora el grup 3 és a x = 3 km i el grup 4 a x = 4 km. Desplaçament del grup 3 des de la sortida: 3 − 0 = 3 km. Si vols saber quant s'ha de desplaçar el grup 4 per arribar on és el 3: 3 − 4 = −1 km, negatiu perquè ha de tornar enrere.</p>
+    </div>
+    <div class="interactive" data-interactive="posicio"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>Un dissabte: de casa a Berga (20 km), de Berga a casa (20 km). El comptaquilòmetres del cotxe diu 40 km: la distància. El teu desplaçament és 0: has acabat exactament on has començat. L'app de mapes que diu "estàs a 0 km de casa" parla de posició.</p>
+      <p>A l'examen, quan una pregunta diu "quant s'ha desplaçat" et pregunta <em>final menys inicial</em>, i quan diu "quina distància ha recorregut" et pregunta pel comptaquilòmetres.</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Restar al revés.</strong><p>Δx és final menys inicial. Si vas de x = 5 a x = 2, Δx = 2 − 5 = −3 m. El signe menys diu que has anat cap al costat negatiu; és informació, no un error.</p></div>
+      <div class="mistake"><strong>Dir que el desplaçament és la distància.</strong><p>Ho són només en un cas: línia recta i sense girar cua. Si hi ha anada i tornada, ja no.</p></div>
+      <div class="mistake"><strong>Un desplaçament negatiu "no pot ser".</strong><p>Pot ser i és freqüent. Negatiu vol dir cap a l'esquerra (o cap avall, o cap on hagis triat com a negatiu).</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">Un mòbil va de x = −2 m a x = 6 m. Desplaçament?</div><div class="opts"><button>4 m</button><button>8 m</button><button>−8 m</button></div><div class="why" hidden></div><div class="expl" hidden>Δx = 6 − (−2) = 8 m. Compte amb el menys davant del menys.</div></div>
+      <div class="q" data-answer="2"><div class="qt">Vas 300 m cap a l'est i 300 m cap a l'oest. Desplaçament i distància?</div><div class="opts"><button>600 m i 600 m</button><button>0 m i 0 m</button><button>0 m i 600 m</button></div><div class="why" hidden></div><div class="expl" hidden>Acabes on has començat: desplaçament zero. Però has caminat 600 m: aquesta és la distància.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Δt = t₂ − t₁ és...</div><div class="opts"><button>Un interval de temps</button><button>Un instant</button><button>Una posició</button></div><div class="why" hidden></div><div class="expl" hidden>La diferència entre dos instants és una durada. Δ sempre vol dir "final menys inicial".</div></div>
+    </div>
+    <div class="askbar"><p><strong>Desplaçament o distància?</strong> Explica-li al tutor un recorregut teu i que t'ho digui.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 1.3 VELOCITAT -->
+<section class="view" id="t-velocitat" data-topic="velocitat" data-unit="1" data-num="1.3" data-title="Velocitat mitjana i instantània">
+  <div class="hero">
+    <div class="eyebrow">Unitat 1 <span class="sep">·</span> Tema 3</div>
+    <h1>Quant avances per cada segon. <em>De mitjana o ara mateix.</em></h1>
+    <p class="lead">Hi ha dues velocitats. La mitjana, que és la del viatge sencer, i la instantània, que és la del velocímetre. Passar de l'una a l'altra és la primera derivada que veuràs a la vida. Aquí es veu amb un dibuix.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>La <strong>velocitat</strong> diu quant canvia la posició per cada unitat de temps. Mitjana: sobre un interval sencer. Instantània: en un instant concret, fent l'interval tan petit com vulguis.</p></div>
+    <div class="prose">
+      <h3>Velocitat mitjana</h3>
+      <div class="formula">v<sub>m</sub> = <span class="frac"><span>Δx</span><span>Δt</span></span> = <span class="frac"><span>x<sub>2</sub> − x<sub>1</sub></span><span>t<sub>2</sub> − t<sub>1</sub></span></span><small>unitat SI: m/s</small></div>
+      <p>Desplaçament dividit per temps. Si vas de Girona a Lleida (200 km) en 2 h i mitja, la mitjana és 80 km/h, però no has anat mai a 80 exactament: has passat per 0 al peatge i per 120 a l'autopista. La mitjana esborra els detalls de l'interval.</p>
+      <p>Al gràfic x-t, la velocitat mitjana entre dos instants és el <strong>pendent de la recta que uneix els dos punts</strong> (la secant). Pendent gran, velocitat gran; pendent zero, aturat; pendent negatiu, tornes enrere. Fixa't que usa el desplaçament: si tornes al mateix punt, la velocitat mitjana és zero encara que t'hagis mogut molt. (Si divideixes la distància pel temps obtens la <strong>celeritat mitjana</strong>, que sempre és positiva; el llibre en diu rapidesa.)</p>
+      <p>Exemple del llibre (un noi entrenant): entre t = 0 i t = 600 s passa de x = 0 a x = 1000 m: v<sub>m</sub> = 1,67 m/s. Entre 1200 i 1500 s es queda a x = 2500 m: v<sub>m</sub> = 0. Entre 2000 i 2520 s passa de 4000 a 2500 m: v<sub>m</sub> = −1500 / 520 = −2,88 m/s, torna enrere.</p>
+
+      <h3>Velocitat instantània: la idea de derivada</h3>
+      <p>Vols la velocitat exactament a t = 10 s. Calcules la mitjana entre 10 s i 11 s. Després entre 10 i 10,1. Després entre 10 i 10,01. A mesura que Δt es fa petit, el resultat s'estabilitza en un nombre: aquest és la velocitat instantània. El llibre ho escriu amb un límit:</p>
+      <div class="formula">v = lim<sub>Δt→0</sub> <span class="frac"><span>Δx</span><span>Δt</span></span> = <span class="frac"><span>dx</span><span>dt</span></span><small>"derivada de la posició respecte del temps"</small></div>
+      <p>Al dibuix passa una cosa bonica: la secant, quan els dos punts s'acosten, es converteix en la <strong>recta tangent</strong> a la corba. La velocitat instantània és el pendent de la tangent. Això és tot el que és una derivada: el pendent de la corba en un punt. Prova-ho a l'interactiu movent Δt cap a zero.</p>
+      <p>Els signes van igual que amb el desplaçament: v &gt; 0 vol dir que ara mateix vas cap al costat positiu; v &lt; 0, cap al negatiu; v = 0, aturat en aquest instant (potser només un moment, com una pilota al punt més alt).</p>
+    </div>
+    <div class="interactive" data-interactive="secant"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>El velocímetre del cotxe marca velocitat instantània: el que va ara. L'app que et diu "temps estimat d'arribada" treballa amb la mitjana. Els radars de tram de l'autopista fan una mitjana entre dues càmeres: pots passar a 140 per sota d'una i que et multin igual si la mitjana surt de 130.</p>
+      <p>Per convertir: km/h ÷ 3,6 = m/s. <em>Un bon corredor de 100 m fa 10 m/s</em>: 36 km/h.</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Fer la mitjana de les velocitats.</strong><p>Si vas a 60 km/h a l'anada i a 40 a la tornada, la mitjana no és 50. Cal desplaçament total entre temps total. (Surt 48 km/h per a la distància; i 0 per al desplaçament, perquè tornes on eres.)</p></div>
+      <div class="mistake"><strong>Barrejar km amb segons.</strong><p>Δx en metres i Δt en segons dona m/s. Si no, passa-ho tot al SI primer.</p></div>
+      <div class="mistake"><strong>Creure que v = 0 vol dir "està quiet i ho estarà".</strong><p>La pilota al punt més alt té v = 0 durant un instant i tot seguit cau. Velocitat zero en un instant no vol dir aturat per sempre.</p></div>
+      <div class="mistake"><strong>Llegir el gràfic x-t com un mapa.</strong><p>Una recta que puja al gràfic x-t no vol dir que el mòbil pugi una costa: vol dir que la posició creix amb el temps a ritme constant.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">Un mòbil passa de x = 20 m a x = 5 m en 3 s. Velocitat mitjana?</div><div class="opts"><button>5 m/s</button><button>−5 m/s</button><button>8,3 m/s</button></div><div class="why" hidden></div><div class="expl" hidden>Δx = 5 − 20 = −15 m; v_m = −15 / 3 = −5 m/s. El signe diu que va cap al costat negatiu.</div></div>
+      <div class="q" data-answer="2"><div class="qt">Al gràfic x-t, la velocitat instantània en un punt és...</div><div class="opts"><button>L'alçada del punt</button><button>L'àrea sota la corba</button><button>El pendent de la tangent en aquell punt</button></div><div class="why" hidden></div><div class="expl" hidden>L'alçada és la posició. L'àrea sota x-t no significa res útil. El pendent de la tangent és la derivada: la velocitat.</div></div>
+      <div class="q" data-answer="0"><div class="qt">90 km/h en unitats del SI són...</div><div class="opts"><button>25 m/s</button><button>324 m/s</button><button>90 m/s</button></div><div class="why" hidden></div><div class="expl" hidden>90 / 3,6 = 25 m/s. Cada segon, 25 metres.</div></div>
+    </div>
+    <div class="askbar"><p><strong>La derivada encara fa respecte?</strong> Demana-li al tutor que t'ho torni a explicar amb un altre exemple.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 1.4 ACCELERACIÓ -->
+<section class="view" id="t-acceleracio" data-topic="acceleracio" data-unit="1" data-num="1.4" data-title="Acceleració">
+  <div class="hero">
+    <div class="eyebrow">Unitat 1 <span class="sep">·</span> Tema 4</div>
+    <h1>Accelerar és canviar de velocitat. <em>No anar ràpid.</em></h1>
+    <p class="lead">Un cotxe a 120 km/h constants té acceleració zero. Un que frena té acceleració. Aquesta frase sembla mentida i és el concepte que separa qui entén la cinemàtica de qui la memoritza.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>L'<strong>acceleració</strong> diu quant canvia la velocitat per cada segon. Es mesura en m/s², "metres per segon, cada segon".</p></div>
+    <div class="prose">
+      <div class="formula">a<sub>m</sub> = <span class="frac"><span>Δv</span><span>Δt</span></span> = <span class="frac"><span>v<sub>2</sub> − v<sub>1</sub></span><span>t<sub>2</sub> − t<sub>1</sub></span></span><small>i la instantània és la derivada: a = dv/dt</small></div>
+      <p>La unitat s'entén sola: si a = 3 m/s², cada segon la velocitat puja 3 m/s. Al cap d'un segon vas a 3 m/s, al cap de dos a 6, al cap de tres a 9. Un cotxe que fa de 0 a 100 km/h (27,8 m/s) en 10 s té a<sub>m</sub> = 2,78 m/s².</p>
+      <p>És exactament el mateix pas que de posició a velocitat, un esglaó més amunt: la velocitat és el pendent del gràfic x-t; l'acceleració és el pendent del gràfic <strong>v-t</strong>. I l'acceleració instantània és la derivada de la velocitat (la segona derivada de la posició).</p>
+      <h3>El joc dels signes</h3>
+      <p>En una dimensió, l'acceleració té signe, i el signe sol no diu si el mòbil va més ràpid o més a poc a poc. Cal comparar-lo amb el signe de la velocitat:</p>
+      <div class="spec">
+        <div><span>a i v mateix signe</span><span>El mòbil <strong>va cada cop més ràpid</strong> (el mòdul de v creix). Un cotxe que arrenca cap a la dreta (v &gt; 0, a &gt; 0) o un que arrenca cap a l'esquerra (v &lt; 0, a &lt; 0).</span></div>
+        <div><span>a i v signe contrari</span><span>El mòbil <strong>frena</strong>. Va cap a la dreta (v &gt; 0) i l'acceleració apunta cap a l'esquerra (a &lt; 0). Si continua, s'atura (v = 0) i comença a anar cap a l'esquerra.</span></div>
+        <div><span>a = 0</span><span>La velocitat no canvia: moviment uniforme (o aturat).</span></div>
+      </div>
+      <p>Per tant "acceleració negativa" no és sinònim de frenar. Un ascensor que baixa cada cop més ràpid té velocitat negativa i acceleració negativa, i accelera.</p>
+    </div>
+    <div class="interactive" data-interactive="acceleracio"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>Al bus, sents l'acceleració, no la velocitat. A 80 km/h constants no notes res; pots llegir. Quan el conductor frena, la motxilla del terra llisca cap endavant. El cos detecta canvis de velocitat: per això les corbes es noten (la direcció de la velocitat canvia) i els trams rectes no.</p>
+      <p>Un mòbil que cau: cada segon, <em>9,8 m/s més ràpid</em>. Un segon després de deixar-lo anar va a 35 km/h; dos segons després, a 70. Per això les caigudes curtes trenquen pantalles.</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Acceleració = velocitat gran.</strong><p>Un avió de creuer a 900 km/h té a = 0. Un caragol que arrenca té a ≠ 0. L'acceleració parla de canvi, no de valor.</p></div>
+      <div class="mistake"><strong>Acceleració negativa = frenar.</strong><p>Només si v és positiva. Compara sempre els dos signes.</p></div>
+      <div class="mistake"><strong>v = 0 implica a = 0.</strong><p>Una pilota al punt més alt té v = 0 i a = −9,8 m/s². Si l'acceleració fos zero, es quedaria flotant.</p></div>
+      <div class="mistake"><strong>Unitats: m/s en lloc de m/s².</strong><p>L'acceleració és velocitat entre temps: (m/s)/s = m/s². Si escrius m/s l'has convertit en velocitat.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="0"><div class="qt">Una moto passa de 10 m/s a 25 m/s en 5 s. Acceleració mitjana?</div><div class="opts"><button>3 m/s²</button><button>5 m/s²</button><button>15 m/s²</button></div><div class="why" hidden></div><div class="expl" hidden>Δv = 25 − 10 = 15 m/s; a = 15 / 5 = 3 m/s². Cada segon guanya 3 m/s.</div></div>
+      <div class="q" data-answer="2"><div class="qt">Un mòbil té v = −8 m/s i a = −2 m/s². Què fa?</div><div class="opts"><button>Frena</button><button>Està aturat</button><button>Va cada cop més ràpid cap al costat negatiu</button></div><div class="why" hidden></div><div class="expl" hidden>Mateix signe: el mòdul de la velocitat creix. D'aquí a un segon anirà a −10 m/s.</div></div>
+      <div class="q" data-answer="1"><div class="qt">Un tren a 200 km/h constants per una via recta té acceleració...</div><div class="opts"><button>Molt gran</button><button>Zero</button><button>Igual a 200</button></div><div class="why" hidden></div><div class="expl" hidden>La velocitat no canvia: Δv = 0, a = 0. Anar ràpid i accelerar són coses diferents.</div></div>
+    </div>
+    <div class="askbar"><p><strong>El tema dels signes és el que més confon.</strong> Posa-li un cas al tutor i que et digui si accelera o frena.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 1.5 MRU -->
+<section class="view" id="t-mru" data-topic="mru" data-unit="1" data-num="1.5" data-title="Moviment rectilini uniforme (MRU)">
+  <div class="hero">
+    <div class="eyebrow">Unitat 1 <span class="sep">·</span> Tema 5</div>
+    <h1>Recte i sempre igual. <em>El moviment més senzill.</em></h1>
+    <p class="lead">Velocitat constant sobre una línia recta. Una sola fórmula, que és la del preu d'un taxi: una quantitat fixa més tant per cada unitat. Aquí la veuràs néixer del gràfic.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>En el <strong>MRU</strong> la velocitat no canvia (a = 0): en temps iguals, distàncies iguals. La posició és una recta en funció del temps.</p></div>
+    <div class="prose">
+      <div class="formula">x = x<sub>0</sub> + v · t<small>posició inicial + velocitat × temps</small></div>
+      <p>Llegeix-la en veu alta: "on soc ara és on era al principi més el que he avançat, i el que he avançat és la velocitat pel temps". Si a t = 0 eres a x<sub>0</sub> = 100 m i vas a v = 5 m/s, al cap de 10 s ets a 100 + 50 = 150 m. Si v és negativa, cada segon la posició baixa.</p>
+      <p>Si el temps no comença a zero (el mòbil arrenca a t<sub>0</sub>), l'equació és x = x<sub>0</sub> + v·(t − t<sub>0</sub>): el que compta és el temps que fa que es mou.</p>
+      <h3>Els tres gràfics</h3>
+      <div class="spec">
+        <div><span>x-t</span><span>Una <strong>recta</strong>. El pendent és la velocitat: pendent positiu, va cap al costat positiu; negatiu, cap al negatiu; horitzontal, aturat. On talla l'eix vertical és x<sub>0</sub>.</span></div>
+        <div><span>v-t</span><span>Una <strong>recta horitzontal</strong> a l'alçada de v. L'àrea entre la recta i l'eix de temps és el desplaçament: base × alçada = Δt · v = Δx.</span></div>
+        <div><span>a-t</span><span>Zero tota l'estona.</span></div>
+      </div>
+      <h3>Problemes de trobada</h3>
+      <p>Dos mòbils, cadascú amb la seva equació x<sub>A</sub>(t) i x<sub>B</sub>(t), es troben quan són al mateix lloc al mateix instant: x<sub>A</sub> = x<sub>B</sub>. Igualem, aïllem t i, si volem el lloc, substituïm en qualsevol de les dues. Condició imprescindible: el mateix origen, el mateix instant zero i les mateixes unitats per a tots dos. Si un surt més tard, el seu temps és (t − t<sub>0</sub>); si va en sentit contrari, la seva velocitat és negativa.</p>
+    </div>
+    <div class="interactive" data-interactive="mru"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>Un tren de rodalies en un tram recte a velocitat de creuer, una cinta transportadora, la llum. Al món real cap moviment és exactament uniforme, però molts ho són prou durant una estona per fer servir la fórmula.</p>
+      <p>El problema de trobada és el de <em>"surto de Bagà cap a Berga a 60 km/h i tu surts de Berga cap a Bagà a 40 km/h; on ens creuem?"</em>. Amb 20 km entre mig: 60t = 20 − 40t, t = 0,2 h = 12 min, a 12 km de Bagà.</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Oblidar x<sub>0</sub>.</strong><p>x = v·t només val si a t = 0 el mòbil és a l'origen. Si surt de 100 m, cal el + 100.</p></div>
+      <div class="mistake"><strong>Posar v positiva a tothom.</strong><p>Si dos mòbils van l'un cap a l'altre, un té v negativa. Si no, mai no es trobaran a la fórmula.</p></div>
+      <div class="mistake"><strong>Orígens diferents per a cada mòbil.</strong><p>Si A comença a "x = 0" i B també, però són a 20 km de distància, la fórmula no ho sap. Un sol origen: A a 0, B a 20 km.</p></div>
+      <div class="mistake"><strong>Confondre el gràfic x-t amb v-t.</strong><p>Una recta inclinada al gràfic x-t és MRU; una recta inclinada al gràfic v-t és MRUA. Mira sempre què hi ha a l'eix vertical.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">x = 50 − 4t (SI). On és el mòbil a t = 5 s i cap a on va?</div><div class="opts"><button>A 70 m, cap al positiu</button><button>A 30 m, cap al negatiu</button><button>A 30 m, aturat</button></div><div class="why" hidden></div><div class="expl" hidden>x = 50 − 20 = 30 m. La velocitat és −4 m/s: es mou cap al costat negatiu, acostant-se a l'origen.</div></div>
+      <div class="q" data-answer="2"><div class="qt">Al gràfic v-t d'un MRU, l'àrea sota la recta és...</div><div class="opts"><button>L'acceleració</button><button>La velocitat</button><button>El desplaçament</button></div><div class="why" hidden></div><div class="expl" hidden>Base (Δt) per alçada (v) = v·Δt = Δx. Aquesta regla val per a tots els moviments, no només l'uniforme.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Dos mòbils: x_A = 2t i x_B = 100 − 3t. Quan es troben?</div><div class="opts"><button>t = 20 s</button><button>t = 50 s</button><button>t = 100 s</button></div><div class="why" hidden></div><div class="expl" hidden>2t = 100 − 3t → 5t = 100 → t = 20 s, a x = 40 m.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Un problema de trobada que no surt?</strong> Escriu les dades tal qual i el tutor et fa muntar les dues equacions.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 1.6 MRUA -->
+<section class="view" id="t-mrua" data-topic="mrua" data-unit="1" data-num="1.6" data-title="Moviment rectilini uniformement accelerat (MRUA)">
+  <div class="hero">
+    <div class="eyebrow">Unitat 1 <span class="sep">·</span> Tema 6</div>
+    <h1>Recte i canviant de velocitat. <em>Sempre al mateix ritme.</em></h1>
+    <p class="lead">Un cotxe que arrenca, un que frena, una pedra que cau: acceleració constant. Tres fórmules que en realitat són una de sola i les seves conseqüències.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>En el <strong>MRUA</strong> l'acceleració és constant: cada segon la velocitat canvia la mateixa quantitat. La velocitat és una recta i la posició una paràbola.</p></div>
+    <div class="prose">
+      <div class="formula">v = v<sub>0</sub> + a · t<small>la velocitat canvia a ritme fix</small></div>
+      <div class="formula">x = x<sub>0</sub> + v<sub>0</sub> · t + ½ · a · t²<small>la posició: el terme ½at² és el que afegeix l'acceleració</small></div>
+      <div class="formula">v² = v<sub>0</sub>² + 2 · a · Δx<small>quan no saps ni t'interessa el temps</small></div>
+      <p>La primera és la definició d'acceleració reescrita: si cada segon la velocitat puja a, al cap de t segons ha pujat a·t. La segona s'entén amb el gràfic v-t: l'àrea sota la recta és un rectangle (v<sub>0</sub>·t) més un triangle (½·a·t·t). La tercera surt de combinar les dues eliminant t, i és la que et salva quan el problema no parla de temps ("a quina velocitat arriba a terra?", "quina distància necessita per frenar?").</p>
+      <h3>Els tres gràfics</h3>
+      <div class="spec">
+        <div><span>x-t</span><span><strong>Paràbola</strong>. Cap amunt si a &gt; 0, cap avall si a &lt; 0. El pendent en cada punt és la velocitat en aquell instant: la paràbola es va inclinant cada cop més.</span></div>
+        <div><span>v-t</span><span><strong>Recta inclinada</strong>, pendent a. Talla l'eix vertical a v<sub>0</sub>. L'àrea és el desplaçament. Quan la recta talla l'eix del temps (v = 0), el mòbil canvia de sentit.</span></div>
+        <div><span>a-t</span><span>Recta horitzontal a l'alçada d'a.</span></div>
+      </div>
+      <h3>Frenar</h3>
+      <p>Un cotxe a 20 m/s frena amb a = −4 m/s². S'atura quan v = 0: 0 = 20 − 4t, t = 5 s. Quant recorre? Amb la tercera: 0 = 20² + 2·(−4)·Δx, Δx = 400/8 = 50 m. Fixa't que la distància de frenada va amb v²: <strong>al doble de velocitat, quatre vegades més distància</strong>. Per això 50 km/h en ciutat i 30 en carrers estrets.</p>
+      <h3>Com atacar un problema</h3>
+      <div class="steps">
+        <div class="step"><h4>Esquema i sentit positiu</h4><p>Dibuixa la recta, marca l'origen i decideix cap a on és positiu. Tot signe surt d'aquí.</p></div>
+        <div class="step"><h4>Dades amb signe i en SI</h4><p>v<sub>0</sub> = +20 m/s, a = −4 m/s², x<sub>0</sub> = 0. Els km/h a m/s abans de res.</p></div>
+        <div class="step"><h4>Què et demanen i quina equació ho conté</h4><p>Temps → primera. Posició → segona. Velocitat i distància sense temps → tercera.</p></div>
+        <div class="step"><h4>Substitueix, aïlla, comprova</h4><p>Té sentit el signe? La unitat és la que toca? Un temps negatiu o una distància de frenada de 5 km són avisos.</p></div>
+      </div>
+    </div>
+    <div class="interactive" data-interactive="mrua"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>Al semàfor verd, el cotxe arrenca: la velocitat puja a poc a poc i uniformement si el conductor manté el peu igual. Al gràfic v-t és una recta que puja. Al carrer, en canvi, el cotxe recorre cada segon més metres que l'anterior: 1, 3, 5, 7... (els nombres senars, si a = 2 m/s²). Aquesta és la paràbola.</p>
+      <p>A 50 km/h, un cotxe normal necessita uns <em>14 m per frenar</em> (sense comptar el temps de reacció). A 100 km/h, uns 55. La fórmula v² ho explica, i la DGT ho confirma.</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Oblidar el ½.</strong><p>x = x<sub>0</sub> + v<sub>0</sub>t + ½at². El ½ ve de l'àrea del triangle al gràfic v-t. Sense el ½, l'equació dimensional és correcta però el resultat és el doble.</p></div>
+      <div class="mistake"><strong>Signes a l'atzar.</strong><p>Si frena i v és positiva, a és negativa. Si tries el sentit positiu cap avall en una caiguda, g és positiva. Coherència amb l'esquema.</p></div>
+      <div class="mistake"><strong>Usar la fórmula del MRU amb acceleració.</strong><p>x = v·t només serveix si v és constant. Amb acceleració, la v canvia a cada instant.</p></div>
+      <div class="mistake"><strong>Continuar la fórmula després d'aturar-se.</strong><p>Un cotxe que frena s'atura a t = 5 s i es queda quiet. Les equacions, en canvi, el farien anar enrere a t = 6 s. Les fórmules no saben que hi ha un fre.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">Un cotxe arrenca del repòs amb a = 2 m/s². Quant ha recorregut als 10 s?</div><div class="opts"><button>20 m</button><button>100 m</button><button>200 m</button></div><div class="why" hidden></div><div class="expl" hidden>x = ½ · 2 · 10² = 100 m. Sense el ½ hauries dit 200.</div></div>
+      <div class="q" data-answer="2"><div class="qt">Quina equació fas servir si no saps el temps ni te'l demanen?</div><div class="opts"><button>v = v₀ + at</button><button>x = x₀ + v₀t + ½at²</button><button>v² = v₀² + 2aΔx</button></div><div class="why" hidden></div><div class="expl" hidden>És la que relaciona velocitats i desplaçament sense el temps.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Al gràfic v-t d'un MRUA, la recta talla l'eix horitzontal. Què passa en aquell instant?</div><div class="opts"><button>El mòbil s'atura i canvia de sentit</button><button>El mòbil és a l'origen</button><button>L'acceleració es fa zero</button></div><div class="why" hidden></div><div class="expl" hidden>v = 0 un instant, i després la velocitat canvia de signe: el mòbil dona mitja volta. L'acceleració segueix igual.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Un problema de MRUA a mitges?</strong> Escriu-li al tutor l'enunciat i comença per l'esquema.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 1.7 CAIGUDA -->
+<section class="view" id="t-caiguda" data-topic="caiguda" data-unit="1" data-num="1.7" data-title="Caiguda lliure i llançament vertical">
+  <div class="hero">
+    <div class="eyebrow">Unitat 1 <span class="sep">·</span> Tema 7</div>
+    <h1>Tot cau igual. <em>A 9,8 m/s cada segon.</em></h1>
+    <p class="lead">Una bola de ferro i una de fusta deixades anar alhora arriben a terra alhora. Sense aire, també una ploma. La caiguda lliure és un MRUA amb una acceleració que ja saps: g.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>La <strong>caiguda lliure</strong> és un MRUA vertical amb a = g = 9,8 m/s² cap avall, igual per a tots els cossos si no hi ha fregament amb l'aire.</p></div>
+    <div class="prose">
+      <p>Cap fórmula nova: són les del MRUA amb a = −g si tries l'eix Y positiu cap amunt (que és la convenció més habitual, amb l'origen a terra).</p>
+      <div class="formula">v = v<sub>0</sub> − g·t &nbsp;&nbsp;&nbsp; y = y<sub>0</sub> + v<sub>0</sub>·t − ½·g·t² &nbsp;&nbsp;&nbsp; v² = v<sub>0</sub>² − 2·g·Δy<small>eix Y cap amunt, g = 9,8 m/s²</small></div>
+      <h3>Deixar caure</h3>
+      <p>v<sub>0</sub> = 0. Des de 20 m: 0 = 20 − ½·9,8·t², t = √(40/9,8) = 2,02 s. Velocitat en arribar: v = −9,8·2,02 = −19,8 m/s (negativa perquè va cap avall), uns 71 km/h. El temps de caiguda no depèn de la massa: la pedra i la pilota de tennis arriben alhora.</p>
+      <h3>Llançar cap amunt</h3>
+      <p>v<sub>0</sub> &gt; 0. La gravetat la va frenant (v i a de signe contrari) fins que al punt més alt v = 0; llavors comença a baixar accelerant. Amb v = 0 a la primera equació: t<sub>pujada</sub> = v<sub>0</sub>/g. Amb v = 0 a la tercera: h<sub>màx</sub> = v<sub>0</sub>²/(2g). Tres coses que convé saber sense calcular:</p>
+      <ul>
+        <li>Al punt més alt v = 0 però <strong>a = −g</strong>, com sempre. Si l'acceleració fos zero, la pilota es quedaria flotant.</li>
+        <li>El temps de baixada és igual al de pujada (fins a la mateixa alçada).</li>
+        <li>Torna a la mà amb la <strong>mateixa velocitat en mòdul</strong> i sentit contrari.</li>
+      </ul>
+      <p>Exemple: pilota llançada a 10 m/s cap amunt. Puja h = 100/19,6 = 5,1 m, triga 1,02 s a pujar i 2,04 s a tornar a la mà, on arriba a −10 m/s.</p>
+    </div>
+    <div class="interactive" data-interactive="caiguda"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>El mòbil que et cau de la mà a 1,5 m arriba a terra en 0,55 s a 5,4 m/s (19 km/h). No dona temps a reaccionar: el temps de reacció humà és d'uns 0,2 s, i en 0,2 s la gravetat ja l'ha fet baixar 20 cm.</p>
+      <p>Una pedra al pou: comptes els segons fins que sents el "plof" i tens la fondària amb <em>h = ½·g·t²</em>. Tres segons, 44 metres (ignorant el temps que triga el so a pujar).</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Canviar el signe de g a mig problema.</strong><p>Si has triat l'eix cap amunt, a = −9,8 tota l'estona: quan puja, al punt més alt i quan baixa. La gravetat no canvia.</p></div>
+      <div class="mistake"><strong>Fer que la massa importi.</strong><p>El temps de caiguda i la velocitat d'arribada no depenen de la massa. Una pedra de 2 kg i una d'1 kg cauen igual (sense aire).</p></div>
+      <div class="mistake"><strong>a = 0 al punt més alt.</strong><p>v = 0 durant un instant; a = −g sempre.</p></div>
+      <div class="mistake"><strong>Barrejar y (posició) i h (alçada recorreguda).</strong><p>Si l'origen és a terra, y és l'alçada. Si l'origen és el punt de llançament, y és el que ha pujat respecte de la mà. Decideix-ho a l'esquema.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="0"><div class="qt">Una pedra de 3 kg i una d'1 kg cauen des de la mateixa alçada, sense aire. Quina arriba abans?</div><div class="opts"><button>Arriben alhora</button><button>La de 3 kg</button><button>La d'1 kg</button></div><div class="why" hidden></div><div class="expl" hidden>L'acceleració és g per a totes dues. Galileu ho va veure fa quatre segles i els astronautes ho van repetir a la Lluna amb una ploma i un martell.</div></div>
+      <div class="q" data-answer="2"><div class="qt">Al punt més alt d'un llançament vertical...</div><div class="opts"><button>v = 0 i a = 0</button><button>v = màxima i a = −g</button><button>v = 0 i a = −g</button></div><div class="why" hidden></div><div class="expl" hidden>La velocitat s'anul·la un instant. L'acceleració és la de sempre: si fos zero, la pilota no tornaria a baixar.</div></div>
+      <div class="q" data-answer="1"><div class="qt">Una pilota llançada cap amunt a 20 m/s (g ≈ 10 m/s²). Quant triga a pujar?</div><div class="opts"><button>1 s</button><button>2 s</button><button>4 s</button></div><div class="why" hidden></div><div class="expl" hidden>t = v₀/g = 20/10 = 2 s. I 2 s més per baixar: 4 s a la mà.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Problemes de caiguda o llançament?</strong> El tutor et fa triar l'origen i el sentit abans de cap fórmula.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== 1.8 GRÀFICS -->
+<section class="view" id="t-grafics" data-topic="grafics" data-unit="1" data-num="1.8" data-title="Llegir gràfics x-t, v-t i a-t">
+  <div class="hero">
+    <div class="eyebrow">Unitat 1 <span class="sep">·</span> Tema 8</div>
+    <h1>Un gràfic ho diu tot. <em>Si saps on mirar.</em></h1>
+    <p class="lead">Pendent i àrea. Amb aquestes dues paraules es llegeix qualsevol gràfic de cinemàtica: baixar un esglaó (de x a v, de v a a) és mirar el pendent; pujar-lo és calcular l'àrea.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>El <strong>pendent</strong> d'un gràfic et porta a la magnitud de sota (x→v→a). L'<strong>àrea</strong> et porta a la de sobre (a→v→x).</p></div>
+    <div class="prose">
+      <div class="tablewrap"><table class="data">
+        <thead><tr><th>Gràfic</th><th>Recta horitzontal</th><th>Recta inclinada</th><th>Corba</th><th>El pendent és</th><th>L'àrea és</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">x-t</td><td>Aturat</td><td>MRU (pendent = v)</td><td>Velocitat que canvia (paràbola = MRUA)</td><td>la velocitat</td><td>res útil</td></tr>
+          <tr><td class="mono">v-t</td><td>MRU</td><td>MRUA (pendent = a)</td><td>Acceleració que canvia</td><td>l'acceleració</td><td>el desplaçament Δx</td></tr>
+          <tr><td class="mono">a-t</td><td>MRUA</td><td>(no aquest curs)</td><td>(no aquest curs)</td><td>—</td><td>el canvi de velocitat Δv</td></tr>
+        </tbody>
+      </table></div>
+      <h3>Com llegir un gràfic v-t en tres preguntes</h3>
+      <div class="steps">
+        <div class="step"><h4>Està per sobre o per sota de l'eix?</h4><p>Per sobre, v &gt; 0, va cap al costat positiu. Per sota, cap al negatiu. Si el talla, canvia de sentit.</p></div>
+        <div class="step"><h4>Puja, baixa o és plana?</h4><p>Puja: a &gt; 0. Baixa: a &lt; 0. Plana: a = 0. I si v i a tenen el mateix signe va més ràpid; si no, frena.</p></div>
+        <div class="step"><h4>Quanta àrea hi ha?</h4><p>Rectangles i triangles entre la línia i l'eix. L'àrea per sota de l'eix compta negativa. La suma és el desplaçament; la suma en valor absolut, la distància.</p></div>
+      </div>
+      <p>I una advertència que val un examen: el gràfic x-t <strong>no és un dibuix del camí</strong>. Un mòbil que va en línia recta pot tenir un gràfic x-t en forma de muntanya (va i torna). La muntanya és al gràfic, no a la carretera.</p>
+    </div>
+    <div class="interactive" data-interactive="grafics"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>Al rellotge esportiu o a Strava: el gràfic de ritme d'una sortida en bici. Els trams plans són velocitat constant; les pujades del gràfic són quan has accelerat (baixada de Coll de Pal); quan cau a zero, t'has aturat a la font.</p>
+      <p>I el comptaquilòmetres de la bici fa exactament <em>l'àrea sota el gràfic de velocitat</em>: suma velocitat per temps a cada instant. Una integral sense saber-ho.</p>
+    </div>
+  </div>
+
+  <div class="section warm">
+    <div class="eyebrow">Errors típics</div>
+    <div class="mistakes">
+      <div class="mistake"><strong>Llegir la posició quan pregunten la velocitat.</strong><p>Al gràfic x-t, l'alçada és x; la velocitat és el pendent. Un punt alt de la corba no vol dir velocitat alta.</p></div>
+      <div class="mistake"><strong>"El gràfic baixa, així que frena".</strong><p>Si baixa al gràfic v-t per sota de zero, no frena: va cap enrere cada cop més ràpid. Mira el signe de v.</p></div>
+      <div class="mistake"><strong>Àrea sempre positiva.</strong><p>Per calcular el desplaçament, l'àrea sota l'eix es resta. Per a la distància recorreguda, es suma en valor absolut.</p></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">Un gràfic v-t és un rectangle de 5 s per 4 m/s. Desplaçament?</div><div class="opts"><button>0,8 m</button><button>20 m</button><button>9 m</button></div><div class="why" hidden></div><div class="expl" hidden>Àrea = base × alçada = 5 · 4 = 20 m. És un MRU a 4 m/s durant 5 s.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Al gràfic x-t hi ha una recta horitzontal a x = 8 m. Què fa el mòbil?</div><div class="opts"><button>Està aturat a 8 m de l'origen</button><button>Va a 8 m/s</button><button>Accelera</button></div><div class="why" hidden></div><div class="expl" hidden>La posició no canvia amb el temps: pendent zero, velocitat zero. Està quiet a 8 m.</div></div>
+      <div class="q" data-answer="2"><div class="qt">Al gràfic v-t una recta baixa de +6 m/s a −6 m/s en 4 s. L'acceleració és...</div><div class="opts"><button>+3 m/s²</button><button>0</button><button>−3 m/s²</button></div><div class="why" hidden></div><div class="expl" hidden>a = Δv/Δt = (−6 − 6)/4 = −3 m/s². Constant tota l'estona, també quan v passa per zero.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Tens un gràfic al llibre que no saps llegir?</strong> Descriu-lo al tutor ("recta que puja de 0 a 10 en 5 s, després plana...") i llegiu-lo junts.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== E.1 DERIVADA -->
+<section class="view" id="t-derivada" data-topic="derivada" data-unit="E" data-num="E.1" data-title="Eina: què és una derivada">
+  <div class="hero">
+    <div class="eyebrow">Eines <span class="sep">·</span> Matemàtiques per a la física</div>
+    <h1>Derivar és mirar el pendent. <em>En un punt.</em></h1>
+    <p class="lead">La paraula fa por perquè arriba abans que la idea. La idea és aquesta: com de ràpid canvia una cosa ara mateix. La velocitat és la derivada de la posició; l'acceleració, la de la velocitat. Aquí la veuràs amb el dibuix i amb tres regles que cobreixen tot el curs.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>La <strong>derivada</strong> d'una funció en un punt és el pendent de la recta tangent a la corba en aquell punt: el ritme de canvi instantani.</p></div>
+    <div class="prose">
+      <h3>D'on surt</h3>
+      <p>Tens la posició en funció del temps, x(t), dibuixada. Vols saber la velocitat a t = 2 s. Agafes dos punts de la corba, a t = 2 i a t = 2 + Δt, i fas el pendent del segment que els uneix: Δx/Δt. Això és una velocitat mitjana. Ara acostes el segon punt al primer: Δt = 1, 0,1, 0,01... El pendent es va estabilitzant en un valor. Quan Δt "tendeix a zero", el segment s'ha convertit en la tangent, i el pendent és la derivada.</p>
+      <div class="formula">v = <span class="frac"><span>dx</span><span>dt</span></span> = lim<sub>Δt→0</sub> <span class="frac"><span>Δx</span><span>Δt</span></span><small>la "d" és una Δ infinitament petita</small></div>
+      <p>Per això la notació dx/dt sembla una fracció: ho és, amb increments molt petits. I es llegeix "derivada de x respecte de t".</p>
+      <h3>Les regles que necessites (i cap més, de moment)</h3>
+      <div class="tablewrap"><table class="data">
+        <thead><tr><th>Funció</th><th>Derivada</th><th>Llegit en veu alta</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">x = 5 (constant)</td><td class="mono">v = 0</td><td>Una cosa que no canvia té ritme de canvi zero. Aturat.</td></tr>
+          <tr><td class="mono">x = 3·t</td><td class="mono">v = 3</td><td>Una recta té pendent constant. MRU: la derivada de v·t és v.</td></tr>
+          <tr><td class="mono">x = t²</td><td class="mono">v = 2·t</td><td>La paràbola s'empina cada cop més: el pendent creix amb t.</td></tr>
+          <tr><td class="mono">x = t<sup>n</sup></td><td class="mono">v = n·t<sup>n−1</sup></td><td>L'exponent baixa davant i es resta un.</td></tr>
+          <tr><td class="mono">x = f + g</td><td class="mono">v = f' + g'</td><td>La derivada d'una suma és la suma de derivades, terme a terme.</td></tr>
+          <tr><td class="mono">x = k·f</td><td class="mono">v = k·f'</td><td>Les constants que multipliquen es queden on són.</td></tr>
+        </tbody>
+      </table></div>
+      <p>Amb això derives l'equació del MRUA sencera: x = x<sub>0</sub> + v<sub>0</sub>·t + ½·a·t². Terme a terme: la constant x<sub>0</sub> dona 0; v<sub>0</sub>·t dona v<sub>0</sub>; ½·a·t² dona ½·a·2t = a·t. Resultat: v = v<sub>0</sub> + a·t, que és l'altra equació del MRUA. Deriva un altre cop: a. <strong>Les fórmules del llibre no són tres coses a memoritzar: són una i les seves derivades.</strong></p>
+      <h3>I el camí de tornada</h3>
+      <p>De l'acceleració a la velocitat, o de la velocitat a la posició, es va calculant l'àrea sota el gràfic. Aquest procés invers es diu integrar, i a 1r de Batxillerat només el fas amb rectangles i triangles.</p>
+    </div>
+    <div class="interactive" data-interactive="derivada"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>El velocímetre és una derivada (com canvia la posició ara). El comptaquilòmetres és una integral (tot el que s'ha acumulat). El termòmetre diu la temperatura; "està pujant molt ràpid" és la derivada de la temperatura.</p>
+      <p>Els diners al compte: el saldo és x; els ingressos menys les despeses de cada mes són <em>la derivada del saldo</em>. Un saldo que puja a poc a poc té derivada petita i positiva.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="1"><div class="qt">Si x = 4t² + 3t (SI), la velocitat és...</div><div class="opts"><button>v = 4t + 3</button><button>v = 8t + 3</button><button>v = 8t</button></div><div class="why" hidden></div><div class="expl" hidden>Derivada de 4t² és 4·2t = 8t; derivada de 3t és 3. Suma: 8t + 3. A t = 0 la velocitat inicial és 3 m/s, i a = 8 m/s².</div></div>
+      <div class="q" data-answer="2"><div class="qt">La derivada d'una funció en un punt és...</div><div class="opts"><button>L'alçada de la corba</button><button>L'àrea sota la corba</button><button>El pendent de la tangent</button></div><div class="why" hidden></div><div class="expl" hidden>Ritme de canvi instantani = pendent de la recta tangent. L'àrea és la integral.</div></div>
+      <div class="q" data-answer="0"><div class="qt">Si la posició és constant, x = 12 m, la velocitat és...</div><div class="opts"><button>0</button><button>12 m/s</button><button>No es pot saber</button></div><div class="why" hidden></div><div class="expl" hidden>El que no canvia té derivada zero. El mòbil està quiet a 12 m.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Vols derivar una funció concreta?</strong> Escriu-la al tutor i feu-ho terme a terme.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+<!-- ===================================================== E.2 TRIGO -->
+<section class="view" id="t-trigo" data-topic="trigo" data-unit="E" data-num="E.2" data-title="Eina: trigonometria per als vectors">
+  <div class="hero">
+    <div class="eyebrow">Eines <span class="sep">·</span> Matemàtiques per a la física</div>
+    <h1>Sinus, cosinus, tangent. <em>Les tres que fan falta.</em></h1>
+    <p class="lead">Per descompondre un vector en components o per trobar el seu angle només cal un triangle rectangle i tres definicions. Aquí les tens amb el dibuix que t'ha d'aparèixer al cap cada vegada.</p>
+  </div>
+
+  <div class="section">
+    <div class="intro-box"><div class="eyebrow">En una frase</div><p>En un triangle rectangle, <strong>cos α</strong> és el catet de <em>costat</em> de l'angle dividit per la hipotenusa; <strong>sin α</strong>, el catet de davant; <strong>tg α</strong>, davant dividit per costat.</p></div>
+    <div class="prose">
+      <p>Un vector de mòdul a inclinat un angle α respecte de l'eix X forma un triangle rectangle amb les seves components. La hipotenusa és el mòdul; el catet horitzontal és a<sub>x</sub>; el vertical, a<sub>y</sub>.</p>
+      <div class="formula">a<sub>x</sub> = a · cos α &nbsp;&nbsp;&nbsp; a<sub>y</sub> = a · sin α &nbsp;&nbsp;&nbsp; tg α = a<sub>y</sub> / a<sub>x</sub><small>del mòdul i l'angle a les components, i al revés</small></div>
+      <p>Truc de memòria: el <strong>cos</strong>inus va amb l'eix X, el de "costat"; el sinus, amb l'eix Y. Si l'angle es mesura des de l'eix Y (passa a vegades), s'intercanvien.</p>
+      <div class="tablewrap"><table class="data">
+        <thead><tr><th>α</th><th>sin α</th><th>cos α</th><th>tg α</th><th>Per pensar-ho</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">0°</td><td class="mono">0</td><td class="mono">1</td><td class="mono">0</td><td>Vector horitzontal: tot és a<sub>x</sub></td></tr>
+          <tr><td class="mono">30°</td><td class="mono">0,50</td><td class="mono">0,87</td><td class="mono">0,58</td><td>Poc inclinat: a<sub>y</sub> és la meitat del mòdul</td></tr>
+          <tr><td class="mono">45°</td><td class="mono">0,71</td><td class="mono">0,71</td><td class="mono">1</td><td>Diagonal: components iguals</td></tr>
+          <tr><td class="mono">60°</td><td class="mono">0,87</td><td class="mono">0,50</td><td class="mono">1,73</td><td>Molt inclinat: a<sub>x</sub> és la meitat</td></tr>
+          <tr><td class="mono">90°</td><td class="mono">1</td><td class="mono">0</td><td class="mono">—</td><td>Vector vertical: tot és a<sub>y</sub></td></tr>
+        </tbody>
+      </table></div>
+      <h3>La calculadora</h3>
+      <p>Dues coses. Primera: que estigui en <strong>graus</strong> (DEG a la pantalla), mai en radians. Segona: tg<sup>-1</sup> només retorna angles entre −90° i 90°. Si el vector té a<sub>x</sub> negatiu (apunta cap a l'esquerra), suma 180° al que et doni. Exemple: (−3, 4) té mòdul 5 i tg<sup>-1</sup>(4/−3) = −53,1°; com que a<sub>x</sub> &lt; 0, l'angle real és 126,9°. Dibuixa'l i ho veuràs.</p>
+    </div>
+    <div class="interactive" data-interactive="trigo"></div>
+
+    <div class="life">
+      <div class="eyebrow dark">A la teva vida</div>
+      <p>Una rampa del 10 % (10 m de pujada per cada 100 m horitzontals) té una tg de 0,1, uns 5,7°. La pujada a Coll de Pal té trams del 8 %: 4,6°. El que sembla poc en graus es nota molt a les cames, perquè el que compta és el sinus multiplicat pel teu pes.</p>
+      <p>Arrossegar una maleta amb la nansa a 45°: només <em>el 71 % de la força</em> (cos 45°) fa avançar la maleta; la resta l'aixeca.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="eyebrow">Comprova-ho</div>
+    <div class="quiz">
+      <div class="q" data-answer="0"><div class="qt">Un vector de mòdul 10 forma 60° amb l'eix X. Components?</div><div class="opts"><button>(5; 8,7)</button><button>(8,7; 5)</button><button>(10; 6)</button></div><div class="why" hidden></div><div class="expl" hidden>a_x = 10·cos 60° = 5; a_y = 10·sin 60° = 8,7. A 60° la component vertical és la gran.</div></div>
+      <div class="q" data-answer="2"><div class="qt">L'angle del vector (−2, 2) amb l'eix X és...</div><div class="opts"><button>45°</button><button>−45°</button><button>135°</button></div><div class="why" hidden></div><div class="expl" hidden>La calculadora dona tg⁻¹(2/−2) = −45°, però a_x és negatiu: sumem 180° i surt 135°. Apunta cap amunt i a l'esquerra.</div></div>
+      <div class="q" data-answer="1"><div class="qt">Quina funció va amb l'eix X?</div><div class="opts"><button>El sinus</button><button>El cosinus</button><button>La tangent</button></div><div class="why" hidden></div><div class="expl" hidden>a_x = a·cos α. Cosinus, "costat". El sinus va amb l'eix Y.</div></div>
+    </div>
+    <div class="askbar"><p><strong>Un angle que no quadra?</strong> Digues-li al tutor les components i que et dibuixi el quadrant amb paraules.</p><button class="iconbtn ask">Pregunta-ho</button></div>
+  </div>
+</section>
+
+  </main>
+</div>
+
+<!-- ===================================================== XAT -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Tutor">
+  <div class="drawer-head">
+    <div class="t"><div class="eyebrow">Tutor <span class="sep">·</span> <span id="drawerTopicNum">—</span></div><h3 id="drawerTopicTitle">Inici</h3></div>
+    <button class="iconbtn" id="drawerClear" title="Esborra la conversa d'aquest tema">Nova</button>
+    <button class="close" id="drawerClose" aria-label="Tanca">✕</button>
+  </div>
+  <div class="drawer-log" id="drawerLog"></div>
+  <div class="chips" id="drawerChips"></div>
+  <form class="drawer-form" id="drawerForm">
+    <textarea id="drawerInput" placeholder="Escriu la pregunta. Pots enganxar un enunciat sencer." rows="3"></textarea>
+    <div class="row"><small>Retorn envia · Maj+Retorn salt de línia</small><div class="actions"><button type="submit" class="iconbtn primary" id="drawerSend">Envia</button></div></div>
+  </form>
+</aside>
+
+<div class="toast" id="toast"></div>
+
+<footer class="footer">
+  <div class="brandline">Física 1r Batx</div>
+  <div class="meta">Unitats 0 i 1 · Web d'estudi · 2026</div>
+  <p>Els conceptes, la notació i els exemples numèrics segueixen el llibre "Física 1r Batxillerat" (McGraw-Hill, S. Serra, J. M. Mercadé, M. Armengol). Aquesta web no substitueix el llibre: l'explica.</p>
+</footer>
+
+<script src="assets/js/interactives.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>

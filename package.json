@@ -1,0 +1,14 @@
+{
+  "name": "fisica-1r-batx",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Web d'estudi de Física de 1r de Batxillerat amb tutor per xat (Netlify Functions + Claude API)",
+  "type": "module",
+  "scripts": {
+    "dev": "netlify dev",
+    "serve": "npx serve web"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
