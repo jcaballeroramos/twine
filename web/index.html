@@ -97,7 +97,9 @@
   <div class="section">
     <div class="intro-box"><div class="eyebrow">La idea</div><p>El <strong>Sistema Internacional</strong> és l'acord de tot el món per usar les mateixes unitats. Les que faràs servir sempre: <strong>metre (m)</strong> per a longituds, <strong>quilogram (kg)</strong> per a masses i <strong>segon (s)</strong> per al temps.</p></div>
     <div class="prose">
-      <p>N'hi ha set en total (també l'ampere, el kelvin, el mol i la candela), però aquest curs viu de les tres primeres. Quan un problema diu "en unitats del SI" vol dir: metres, quilos i segons. Ni km, ni hores, ni grams.</p>
+      <p>N'hi ha set en total (també l'ampere, el kelvin, el mol i la candela), però aquest curs viu de les tres primeres. Quan un problema diu "en unitats del SI" vol dir: metres, quilos i segons. Ni km, ni hores, ni grams. Des del 2018 les set es defineixen a partir de constants de la natura (la velocitat de la llum, per exemple) i ja no a partir d'objectes guardats en un museu: així valen igual a tot l'univers.</p>
+      <h3>Notació científica: nombres molt grans o molt petits</h3>
+      <p>Un nombre entre 1 i 10, multiplicat per una potència de 10. La massa de la Terra: 5,97·10<sup>24</sup> kg. La càrrega d'un electró: 1,6·10<sup>-19</sup> C. L'exponent diu quants llocs es mou la coma: positiu cap a la dreta (nombre gran), negatiu cap a l'esquerra (nombre petit). 0,000036 és 3,6·10<sup>-5</sup>.</p>
       <h3>Els prefixos: estalviar zeros</h3>
       <p>"Kilo" vol dir mil. "Mil·li" vol dir una mil·lèsima. Serveixen per a qualsevol unitat: 1 km = 1000 m, 1 kg = 1000 g, 1 mm = 0,001 m.</p>
     </div>
@@ -129,6 +131,7 @@
       <div class="q" data-answer="1"><div class="qt">36 km/h són...</div><div class="opts"><button>36 m/s</button><button>10 m/s</button><button>129,6 m/s</button></div><div class="why" hidden></div><div class="expl" hidden>36 / 3,6 = 10 m/s.</div></div>
       <div class="q" data-answer="2"><div class="qt">1 litre (1 dm³) són...</div><div class="opts"><button>10 cm³</button><button>100 cm³</button><button>1000 cm³</button></div><div class="why" hidden></div><div class="expl" hidden>1 dm = 10 cm, i en volum és 10 × 10 × 10 = 1000. Per això un litre són 1000 mL.</div></div>
       <div class="q" data-answer="0"><div class="qt">Quina és una unitat base del SI?</div><div class="opts"><button>El segon</button><button>El newton</button><button>El km/h</button></div><div class="why" hidden></div><div class="expl" hidden>El newton es construeix amb kg, m i s. El km/h no és del SI.</div></div>
+      <div class="q" data-answer="1"><div class="qt">0,00052 en notació científica és...</div><div class="opts"><button>5,2·10<sup>4</sup></button><button>5,2·10<sup>-4</sup></button><button>52·10<sup>-5</sup></button></div><div class="why" hidden></div><div class="expl" hidden>La coma es mou 4 llocs cap a la dreta per arribar a 5,2; per tant l'exponent és −4. La tercera opció té 52, que no és un nombre entre 1 i 10.</div></div>
     </div>
     <div class="askbar"><p><strong>Una conversió que no surt?</strong> Escriu-la al tutor tal com la tens.</p><button class="iconbtn ask">Pregunta-ho</button></div>
   </div>
@@ -195,7 +198,9 @@
       <h3>Components: la fletxa amb dos nombres</h3>
       <p>Qualsevol fletxa es pot descriure com "tants passos cap a la dreta i tants cap amunt". Aquests dos nombres són les <strong>components</strong> (a<sub>x</sub>, a<sub>y</sub>). Del vector (3, 5) en surt tot:</p>
       <div class="formula">mòdul = √(3² + 5²) = 5,83 &nbsp;&nbsp;&nbsp; angle: tg α = 5/3 → α = 59°<small>Pitàgores per a la llargada, tangent per a l'angle</small></div>
-      <p>Una altra manera d'escriure el mateix: <strong>3i⃗ + 5j⃗</strong>. Les lletres i⃗ i j⃗ són "un pas cap a la dreta" i "un pas cap amunt". (3, 5) i 3i⃗ + 5j⃗ són exactament el mateix vector.</p>
+      <p>Una altra manera d'escriure el mateix: <strong>3i⃗ + 5j⃗</strong>. Les lletres i⃗ i j⃗ són "un pas cap a la dreta" i "un pas cap amunt" (i k⃗, "un pas cap endavant", quan hi ha tres dimensions). (3, 5) i 3i⃗ + 5j⃗ són exactament el mateix vector.</p>
+      <p>I una tercera: donar el mòdul i l'angle, que el llibre anomena <strong>forma polar</strong> i escriu 5,83<sub>59°</sub>. De la forma polar a les components: a<sub>x</sub> = a·cos α, a<sub>y</sub> = a·sin α (hi ha un tema d'eines sobre això al final).</p>
+      <p>Dues paraules més que surten al llibre: dos vectors amb el mateix mòdul, direcció i sentit són <strong>equipol·lents</strong> (el mateix vector dibuixat en un altre lloc); si només canvia el sentit, són <strong>oposats</strong>: a⃗ i −a⃗.</p>
     </div>
     <div class="interactive" data-interactive="vector"></div>
     <div class="life">
@@ -288,7 +293,8 @@
     <div class="prose">
       <h3>Tres coses a saber</h3>
       <p><strong>L'aparell té un límit.</strong> Un regle de mil·límetres no distingeix 23,12 cm de 23,13 cm. El més fi que pots dir és 23,1 cm. Aquest límit és l'<strong>error de l'instrument</strong> (0,1 cm) i mai pots donar més decimals que això.</p>
-      <p><strong>Les xifres que compten.</strong> 23,1 té tres xifres significatives. Els zeros del davant no compten (0,0064 en té dues); els del darrere sí (8,0 en té dues i vol dir "he mesurat la dècima i era zero").</p>
+      <p>Tres paraules que el llibre fa servir: <strong>sensibilitat</strong> és aquesta divisió mínima de l'aparell (0,1 cm al regle, 0,01 g a la balança); <strong>precisió</strong> és com de fina és la mesura (més xifres, més precisa); <strong>exactitud</strong> és com d'a prop és del valor real. Es pot ser molt precís i poc exacte: una balança mal calibrada que dona sempre 0,3 g de més.</p>
+      <p><strong>Les xifres que compten.</strong> 23,1 té tres xifres significatives. Els zeros del davant no compten (0,0064 en té dues); els del darrere sí (8,0 en té dues i vol dir "he mesurat la dècima i era zero"). Quan operes: en sumar o restar, el resultat té tants decimals com la dada que en té menys (12 + 11,5 = 23, no 23,5); en multiplicar o dividir, tantes xifres significatives com la dada que en té menys (2,21 · 3,428 = 7,58). Per arrodonir: si la primera xifra que treus és 5 o més, puja l'última que conserves (1,3497 → 1,35).</p>
       <p><strong>Repetir i fer la mitjana.</strong> Si mesures diverses vegades, el millor valor és la mitjana, i l'error és la mesura que més se n'allunya.</p>
       <h3>Com es fa, pas a pas</h3>
       <div class="steps">
@@ -338,7 +344,7 @@
       <div class="step"><h4>Enunciar la llei</h4><p>Si les dades ho confirmen, ho escrius com a fórmula: m = ρ·V. Si no, hipòtesi nova.</p></div>
     </div>
     <div class="prose">
-      <p>La clau que costa d'entendre: una llei no queda "demostrada" per sempre. Val mentre cap experiment la contradigui. Una sola mesura ben feta que no encaixi obliga a revisar-la.</p>
+      <p>La clau que costa d'entendre: una llei no queda "demostrada" per sempre. Val mentre cap experiment la contradigui. Una sola mesura ben feta que no encaixi obliga a revisar-la. I quan diverses lleis encaixen entre elles i expliquen un conjunt de fenòmens, formen una <strong>teoria</strong> (la llei és una relació concreta, la teoria és el marc que les explica).</p>
       <h3>Què vol dir "proporcional"</h3>
       <p>Que si dobles una cosa, es dobla l'altra, i dividint-les surt sempre el mateix nombre. Al gràfic és una <strong>recta que passa pel zero</strong>. Amb el ferro, massa entre volum dona sempre 7,8: la densitat.</p>
     </div>
@@ -416,6 +422,7 @@
     <div class="prose">
       <div class="formula">Δx = x<sub>final</sub> − x<sub>inicial</sub><small>Δ (delta) sempre vol dir "final menys inicial"</small></div>
       <p>La posició porta signe: x = +3 km és a la dreta del zero; x = −2 km, a l'esquerra. El desplaçament també pot ser negatiu (has anat cap a l'esquerra) o zero (has acabat on eres). La distància sempre és positiva.</p>
+      <p>Si el moviment és en un pla, la posició és un vector que va del zero fins al mòbil: el <strong>vector de posició</strong>, r⃗ = x·i⃗ + y·j⃗. I el desplaçament és la resta de dos vectors de posició, Δr⃗ = r⃗<sub>2</sub> − r⃗<sub>1</sub>. En aquesta unitat, amb una sola recta, tot queda en la x.</p>
       <p>Coincideixen només si vas recte i sense girar cua. Si vas i tornes, el desplaçament és zero i la distància no.</p>
       <p>El temps també té la seva delta: Δt = t<sub>2</sub> − t<sub>1</sub> és un interval, una durada.</p>
     </div>
@@ -455,6 +462,7 @@
     <div class="prose">
       <div class="formula">v<sub>m</sub> = <span class="frac"><span>Δx</span><span>Δt</span></span><small>el que has avançat, dividit pel temps que has trigat</small></div>
       <p><strong>Velocitat mitjana:</strong> de Girona a Lleida (200 km) en 2,5 h, 80 km/h. Però mai has anat exactament a 80: has passat per 0 al peatge i per 120 a l'autopista. La mitjana esborra els detalls. Al gràfic posició-temps és el pendent de la recta que uneix dos punts.</p>
+      <p>Compte: la velocitat mitjana es fa amb el <strong>desplaçament</strong>. Si vas a Berga i tornes, el desplaçament és zero i la velocitat mitjana també. El que sí que és diferent de zero és la <strong>rapidesa</strong> (o celeritat) mitjana: distància recorreguda dividida pel temps, sempre positiva. És el nombre que et dona el comptaquilòmetres.</p>
       <p><strong>Velocitat instantània:</strong> la del velocímetre, la d'un moment concret. Per calcular-la fas la mitjana en un tros de temps cada cop més petit: 1 s, 0,1 s, 0,01 s... El resultat s'estabilitza en un nombre. Aquest nombre és la velocitat en aquell instant. Al gràfic, la recta entre dos punts es converteix en la recta que només toca la corba: la <strong>tangent</strong>. El seu pendent és la velocitat.</p>
       <p>Això és una <strong>derivada</strong>. Res més: el pendent de la corba en un punt. El llibre ho escriu v = dx/dt.</p>
       <p>Signes: v positiva, vas cap al costat positiu. Negativa, cap al negatiu. Zero, aturat en aquest instant (potser només un moment).</p>
