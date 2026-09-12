@@ -98,6 +98,11 @@
     <div class="intro-box"><div class="eyebrow">La idea</div><p>El <strong>Sistema Internacional</strong> és l'acord de tot el món per usar les mateixes unitats. Les que faràs servir sempre: <strong>metre (m)</strong> per a longituds, <strong>quilogram (kg)</strong> per a masses i <strong>segon (s)</strong> per al temps.</p></div>
     <div class="prose">
       <p>N'hi ha set en total (també l'ampere, el kelvin, el mol i la candela), però aquest curs viu de les tres primeres. Quan un problema diu "en unitats del SI" vol dir: metres, quilos i segons. Ni km, ni hores, ni grams. Des del 2018 les set es defineixen a partir de constants de la natura (la velocitat de la llum, per exemple) i ja no a partir d'objectes guardats en un museu: així valen igual a tot l'univers.</p>
+      <p>A més de les set, n'hi ha dues de <strong>suplementàries</strong> per als angles: el <strong>radiant</strong> (rad) per a l'angle pla i l'<strong>estereoradiant</strong> (sr) per a l'angle sòlid. No tenen dimensió assignada, i per això els angles no apareixen mai a les equacions dimensionals.</p>
+      <h3>La temperatura: graus i kelvins</h3>
+      <p>La unitat del SI és el <strong>kelvin</strong>, i s'escriu sense el símbol de grau: 300 K, no 300 °K. Per passar-hi:</p>
+      <div class="formula">T (K) = T (°C) + 273<small>i, si algun dia et donen graus Fahrenheit: T (°C) = 5/9 · (T (°F) − 32)</small></div>
+      <p>Exemple del llibre: 86 °F són 5/9·(86 − 32) = 30 °C, i 30 + 273 = 303 K.</p>
       <h3>Notació científica: nombres molt grans o molt petits</h3>
       <p>Un nombre entre 1 i 10, multiplicat per una potència de 10. La massa de la Terra: 5,97·10<sup>24</sup> kg. La càrrega d'un electró: 1,6·10<sup>-19</sup> C. L'exponent diu quants llocs es mou la coma: positiu cap a la dreta (nombre gran), negatiu cap a l'esquerra (nombre petit). 0,000036 és 3,6·10<sup>-5</sup>.</p>
       <h3>Els prefixos: estalviar zeros</h3>
@@ -201,6 +206,8 @@
       <p>Una altra manera d'escriure el mateix: <strong>3i⃗ + 5j⃗</strong>. Les lletres i⃗ i j⃗ són "un pas cap a la dreta" i "un pas cap amunt" (i k⃗, "un pas cap endavant", quan hi ha tres dimensions). (3, 5) i 3i⃗ + 5j⃗ són exactament el mateix vector.</p>
       <p>I una tercera: donar el mòdul i l'angle, que el llibre anomena <strong>forma polar</strong> i escriu 5,83<sub>59°</sub>. De la forma polar a les components: a<sub>x</sub> = a·cos α, a<sub>y</sub> = a·sin α (hi ha un tema d'eines sobre això al final).</p>
       <p>Dues paraules més que surten al llibre: dos vectors amb el mateix mòdul, direcció i sentit són <strong>equipol·lents</strong> (el mateix vector dibuixat en un altre lloc); si només canvia el sentit, són <strong>oposats</strong>: a⃗ i −a⃗.</p>
+      <p>I una quarta característica, el <strong>punt d'aplicació</strong>: d'on surt la fletxa. Segons si es pot moure o no, el llibre parla de vector <strong>fix</strong> (lligat a un punt concret), <strong>lliscant</strong> (es pot moure al llarg de la seva recta) i <strong>lliure</strong> (es pot dibuixar on sigui). Al curs es fan servir gairebé sempre vectors lliures.</p>
+      <div class="intro-box"><div class="eyebrow">Com s'escriu</div><p>Al llibre els vectors porten una fletxa a sobre (a⃗) o van en <strong>negreta</strong>; el mòdul s'escriu sense fletxa (a). I una norma general: les magnituds van en <strong>cursiva</strong> (v, t, m) i les unitats en lletra rodona (km/h, s, kg).</p></div>
     </div>
     <div class="interactive" data-interactive="vector"></div>
     <div class="life">
@@ -300,7 +307,7 @@
       <div class="steps">
         <div class="step"><h4>Mitjana</h4><p>Suma tots els valors i divideix pel nombre de mesures.</p></div>
         <div class="step"><h4>Error absolut</h4><p>Mira quant s'allunya cada mesura de la mitjana. El més gran és l'error absolut. (Si surt més petit que l'error de l'aparell, agafa el de l'aparell.)</p></div>
-        <div class="step"><h4>Resultat i error relatiu</h4><p>(mitjana ± error) unitat. Error relatiu = error / mitjana · 100. Menys d'un 2 %: molt bona mesura.</p></div>
+        <div class="step"><h4>Resultat i error relatiu</h4><p>S'escriu de dues maneres, les dues bones: <strong>(3,45 ± 0,06) s</strong> amb l'error absolut, o <strong>3,45 s ± 1,7 %</strong> amb el relatiu. L'error relatiu és error dividit per mitjana, per 100. Menys d'un 2 %: molt bona mesura.</p></div>
       </div>
       <p>Per què el relatiu és el que importa: equivocar-se d'1 cm en 1 m és un 1 %. Equivocar-se d'1 cm en un dit de 10 cm és un 10 %. El mateix error, una mesura bona i una de dolenta.</p>
     </div>

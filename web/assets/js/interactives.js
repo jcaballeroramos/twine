@@ -185,6 +185,7 @@
       superfície: { base: 'm²', units: { 'km²': 1e6, 'm²': 1, 'dm²': 1e-2, 'cm²': 1e-4, 'mm²': 1e-6 } },
       volum: { base: 'm³', units: { 'm³': 1, 'dm³ (L)': 1e-3, 'cm³ (mL)': 1e-6, 'mm³': 1e-9 } },
       massa: { base: 'kg', units: { t: 1000, kg: 1, g: 1e-3, mg: 1e-6 } },
+      densitat: { base: 'kg/m³', units: { 'kg/m³': 1, 'g/cm³': 1000, 'g/L': 1, 'kg/L': 1000 } },
       temps: { base: 's', units: { h: 3600, min: 60, s: 1, ms: 1e-3 } },
       velocitat: { base: 'm/s', units: { 'km/h': 1000 / 3600, 'm/s': 1, 'cm/s': 0.01, 'km/min': 1000 / 60 }, num: { 'km/h': ['km', 1000, 'h', 3600], 'm/s': ['m', 1, 's', 1], 'cm/s': ['cm', 0.01, 's', 1], 'km/min': ['km', 1000, 'min', 60] } }
     };
@@ -228,7 +229,10 @@
   I.dimensional = function (c) {
     const { canvas, panel } = shell(c, { title: 'Equació dimensional', hint: 'Tria una magnitud i mira com es construeix a partir de L, M i T.' });
     const D = [
+      { n: 'superfície', f: 'S = a · b', s: '[S] = L · L', r: 'L<sup>2</sup>', u: 'm²' },
+      { n: 'volum', f: 'V = a · b · c', s: '[V] = L · L · L', r: 'L<sup>3</sup>', u: 'm³ (1 m³ = 1000 L)' },
       { n: 'velocitat', f: 'v = Δx / Δt', s: '[v] = L / T', r: 'L·T<sup>-1</sup>', u: 'm/s' },
+      { n: 'velocitat angular', f: 'ω = angle / t', s: '[ω] = 1 / T', r: 'T<sup>-1</sup>', u: 'rad/s (el radiant no té dimensió)' },
       { n: 'acceleració', f: 'a = Δv / Δt', s: '[a] = (L·T<sup>-1</sup>) / T', r: 'L·T<sup>-2</sup>', u: 'm/s²' },
       { n: 'força', f: 'F = m · a', s: '[F] = M · L·T<sup>-2</sup>', r: 'M·L·T<sup>-2</sup>', u: 'kg·m/s² = N (newton)' },
       { n: 'energia / treball', f: 'W = F · Δx', s: '[W] = M·L·T<sup>-2</sup> · L', r: 'M·L<sup>2</sup>·T<sup>-2</sup>', u: 'kg·m²/s² = J (joule)' },
@@ -237,6 +241,7 @@
       { n: 'pressió', f: 'p = F / S', s: '[p] = M·L·T<sup>-2</sup> / L<sup>2</sup>', r: 'M·L<sup>-1</sup>·T<sup>-2</sup>', u: 'N/m² = Pa (pascal)' },
       { n: 'densitat', f: 'ρ = m / V', s: '[ρ] = M / L<sup>3</sup>', r: 'M·L<sup>-3</sup>', u: 'kg/m³' },
       { n: 'quantitat de moviment', f: 'p = m · v', s: '[p] = M · L·T<sup>-1</sup>', r: 'M·L·T<sup>-1</sup>', u: 'kg·m/s' },
+      { n: 'impuls lineal', f: 'I = F · Δt', s: '[I] = M·L·T<sup>-2</sup> · T', r: 'M·L·T<sup>-1</sup>', u: 'N·s (igual que la quantitat de moviment!)' },
       { n: 'freqüència', f: 'f = 1 / T', s: '[f] = 1 / T', r: 'T<sup>-1</sup>', u: 's⁻¹ = Hz (hertz)' },
       { n: 'càrrega elèctrica', f: 'Q = I · t', s: '[Q] = I · T', r: 'I·T', u: 'A·s = C (coulomb)' }
     ];
