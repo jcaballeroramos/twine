@@ -153,6 +153,7 @@
           if (k !== null) { store.set('key', k); hist().pop(); input.value = text; busy = false; $('#drawerSend').disabled = false; return send(); }
           throw new Error('Cal la clau d\'accés per parlar amb el tutor.');
         }
+        if (res.status === 404 || res.status === 405 || res.status === 501) throw new Error('El tutor només funciona a la web desplegada a Netlify (cal la funció /api/chat i la clau de l\'API). Aquesta còpia és només de lectura.');
         if (!res.ok) { let e = 'Error ' + res.status; try { e = (await res.json()).error || e; } catch {} throw new Error(e); }
         const reader = res.body.getReader(), dec = new TextDecoder();
         while (true) { const { done, value } = await reader.read(); if (done) break; acc += dec.decode(value, { stream: true }); body.innerHTML = md(acc); log.scrollTop = log.scrollHeight; }
