@@ -66,8 +66,14 @@
     p.innerHTML = `<a href="#${prev.id}">↩ ${prev.unit ? prev.num + ' · ' : ''}${prev.title}</a>${next ? `<a href="#${next.id}">${next.num} · ${next.title} →</a>` : '<span></span>'}`;
     t.el.appendChild(p);
   }
-  function route() { const id = location.hash.replace('#', '') || 'inici'; show(topics.some(t => t.id === id) ? id : 'inici'); }
+  function go(id) { if (!topics.some(t => t.id === id)) id = 'inici'; try { history.replaceState(null, '', '#' + id); } catch {} show(id); }
+  function route() { go(location.hash.replace('#', '') || 'inici'); }
   window.addEventListener('hashchange', route);
+  // Tots els enllaços interns es resolen per JavaScript: funciona també dins de visors que bloquegen la navegació.
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]'); if (!a) return;
+    e.preventDefault(); go(a.getAttribute('href').slice(1));
+  });
   $('#menuBtn').addEventListener('click', () => { const o = sidebar.classList.toggle('open'); $('#scrim').classList.toggle('show', o); });
 
   /* ---------- comprova-ho ---------- */
@@ -139,20 +145,14 @@
       const body = d.lastChild; if (role === 'user' || role === 'error') body.textContent = content; else body.innerHTML = md(content);
       log.appendChild(d); log.scrollTop = log.scrollHeight; return body;
     }
-    function siteKey() { let k = store.get('key', ''); return k; }
     async function send() {
       const text = input.value.trim(); if (!text || busy) return;
       input.value = ''; busy = true; $('#drawerSend').disabled = true;
       hist().push({ role: 'user', content: text }); add('user', text, false); save();
       const body = add('assistant', '', true); let acc = '';
       try {
-        const res = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json', 'x-site-key': siteKey() }, body: JSON.stringify({ topic: topic.id, messages: hist().map(m => ({ role: m.role, content: m.content })) }) });
-        if (res.status === 401) {
-          body.parentElement.remove();
-          const k = prompt('Aquesta web demana una clau d\'accés (la té qui l\'ha configurada):');
-          if (k !== null) { store.set('key', k); hist().pop(); input.value = text; busy = false; $('#drawerSend').disabled = false; return send(); }
-          throw new Error('Cal la clau d\'accés per parlar amb el tutor.');
-        }
+        const res = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ topic: topic.id, messages: hist().map(m => ({ role: m.role, content: m.content })) }) });
+        if (res.status === 401) { location.reload(); return; }
         if (res.status === 404 || res.status === 405 || res.status === 501) throw new Error('El tutor només funciona a la web desplegada a Netlify (cal la funció /api/chat i la clau de l\'API). Aquesta còpia és només de lectura.');
         if (!res.ok) { let e = 'Error ' + res.status; try { e = (await res.json()).error || e; } catch {} throw new Error(e); }
         const reader = res.body.getReader(), dec = new TextDecoder();

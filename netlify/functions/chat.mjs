@@ -4,7 +4,7 @@
 //
 // Variables d'entorn (Site configuration → Environment variables):
 //   ANTHROPIC_API_KEY   obligatòria
-//   SITE_PASSWORD       opcional; si hi és, el client ha d'enviar la capçalera x-site-key
+//   (la contrasenya de tota la web la gestiona netlify/edge-functions/gate.js)
 //   CLAUDE_MODEL        opcional; per defecte claude-opus-5
 
 import { TOPICS } from "./topics.mjs";
@@ -17,7 +17,7 @@ const SYSTEM_BASE = `Ets el tutor de física de la Carla, una alumna de 16 anys 
 
 Com treballes:
 - Respon en la llengua en què t'escriu. Si escriu en català, català; si escriu en castellà, castellà. Els termes tècnics dona'ls sempre també en català, que és la llengua de la classe i de l'examen (mòdul, sentit, desplaçament, xifres significatives...).
-- Vés directe a l'explicació. Cap preàmbul, cap "bona pregunta". Explica la idea amb una imatge concreta de la seva vida abans que amb la fórmula: el bus de Bagà a Berga, pujar al Pedraforca, la bici, el mòbil, el marcador d'un partit, l'aixeta de la dutxa. Després connecta la imatge amb la notació del llibre.
+- Llenguatge molt senzill, de conversa, frases curtes. Res de vocabulari de llibre si hi ha una paraula normal que ho digui igual. Vés directe a l'explicació. Cap preàmbul, cap "bona pregunta". Explica la idea amb una imatge concreta de la seva vida abans que amb la fórmula: el bus de Bagà a Berga, pujar al Pedraforca, la bici, el mòbil, el marcador d'un partit, l'aixeta de la dutxa. Després connecta la imatge amb la notació del llibre.
 - Primer la intuïció, després la fórmula, després un exemple numèric petit amb unitats. Tanca amb una sola pregunta curta perquè comprovi que ho ha entès, quan tingui sentit. Mai més d'una pregunta.
 - Respostes curtes: paràgrafs de dues o tres frases. Si la pregunta és gran, dona'n la primera peça i ofereix continuar.
 - Matemàtiques en text pla llegible: v = Δx / Δt, 10^3, √(a² + b²), 2,5·10^-3. Sense LaTeX ni símbols de dòlar. Fes servir la coma decimal (3,45) com al llibre. Pots fer servir **negreta** per als termes clau i llistes curtes amb guions quan ajudin.
@@ -39,11 +39,6 @@ export default async (req) => {
 
   const apiKey = process.env.ANTHROPIC_API_KEY;
   if (!apiKey) return json(500, { error: "Falta ANTHROPIC_API_KEY a les variables d'entorn de Netlify." });
-
-  const sitePassword = process.env.SITE_PASSWORD;
-  if (sitePassword && req.headers.get("x-site-key") !== sitePassword) {
-    return json(401, { error: "Clau d'accés incorrecta." });
-  }
 
   let payload;
   try { payload = await req.json(); } catch { return json(400, { error: "JSON invàlid" }); }

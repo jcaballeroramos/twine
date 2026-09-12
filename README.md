@@ -11,8 +11,10 @@ web/                      front estàtic (sense build)
   assets/js/interactives.js   18 interactius SVG
   assets/js/app.js            navegació, comprova-ho, client del xat
 netlify/functions/
-  chat.mjs                función v2 amb streaming → POST /api/chat
+  chat.mjs                funció v2 amb streaming → POST /api/chat
   topics.mjs              context de cada tema per al tutor
+netlify/edge-functions/
+  gate.js                 porta d'accés amb contrasenya per a tota la web
 netlify.toml
 ```
 
@@ -23,7 +25,7 @@ El xat crida l'API de Claude (`claude-opus-5`) directament amb `fetch`, sense de
 1. A [app.netlify.com](https://app.netlify.com): **Add new site → Import an existing project → GitHub** i tria aquest repositori. Branca a desplegar: `main` (o la branca on siguin aquests fitxers). Netlify llegeix `netlify.toml`: publica `web/` i les funcions de `netlify/functions/`. No cal build command.
 2. **Site configuration → Environment variables**, afegeix:
    - `ANTHROPIC_API_KEY` (obligatòria): clau de [console.anthropic.com](https://console.anthropic.com).
-   - `SITE_PASSWORD` (opcional però recomanada): una paraula qualsevol. Si hi és, el xat la demana la primera vegada (es guarda al navegador) i així ningú altre pot gastar la teva clau.
+   - `SITE_PASSWORD` (recomanada): una paraula qualsevol. Si hi és, tota la web (pàgines i xat) demana la contrasenya un cop per navegador i la recorda 30 dies (`netlify/edge-functions/gate.js`). Sense aquesta variable la web queda oberta.
    - `CLAUDE_MODEL` (opcional): per canviar de model; per defecte `claude-opus-5`.
 3. **Deploy**. L'adreça serà `https://<nom>.netlify.app`. A partir d'aquí, cada push a la branca redesplega.
 

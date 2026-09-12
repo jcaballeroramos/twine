@@ -87,7 +87,7 @@ svg { display: block; }
 .nav-group { margin-bottom: 26px; }
 .nav-group .eyebrow { margin-bottom: 8px; }
 .nav-group a {
-  display: flex; gap: 10px; align-items: baseline; padding: 6px 8px; font-size: 14.5px; color: var(--stone-700);
+  display: flex; gap: 10px; align-items: baseline; padding: 9px 8px; font-size: 15px; cursor: pointer; color: var(--stone-700);
   border-left: 2px solid transparent; transition: color .15s, border-color .15s, background .15s;
 }
 .nav-group a .n { font-family: var(--mono); font-size: 11px; color: var(--stone-400); min-width: 24px; }
@@ -362,7 +362,7 @@ table.data td.mono { font-family: var(--mono); font-size: 13px; }
   .interactive .panel { border-left: 0; border-top: 1px solid var(--stone-200); }
 }
 @media (max-width: 900px) {
-  .sidebar { position: fixed; left: 0; top: var(--topbar); bottom: 0; height: auto; z-index: 42; transform: translateX(-100%); transition: transform .2s; width: min(320px, 90vw); }
+  .sidebar { position: fixed; left: 0; top: var(--topbar); bottom: 0; height: auto; z-index: 47; transform: translateX(-100%); transition: transform .2s; width: min(320px, 90vw); }
   .sidebar.open { transform: translateX(0); }
   .menubtn { display: inline-block; }
   .topbar .meta { display: none; }
